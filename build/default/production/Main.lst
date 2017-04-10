@@ -1,0 +1,1925 @@
+CCS PCH C Compiler, Version 5.051, 54872               11-avr.-16 14:26
+
+               Filename:   C:\Users\Hugo\Desktop\Programmes\X - Stage\Detection.X\build\default\production\Main.lst
+
+               ROM used:   2704 bytes (8%)
+                           Largest free fragment is 30060
+               RAM used:   118 (6%) at main() level
+                           128 (6%) worst case
+               Stack used: 1 locations (0 in main + 1 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   09FC
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  FF5,15
+003C:  MOVFF  FF6,16
+0040:  MOVFF  FF7,17
+0044:  MOVFF  00,0E
+0048:  MOVFF  01,0F
+004C:  MOVFF  02,10
+0050:  MOVFF  03,11
+0054:  BTFSS  F9D.0
+0056:  GOTO   0060
+005A:  BTFSC  F9E.0
+005C:  GOTO   01B8
+0060:  BTFSS  F9D.5
+0062:  GOTO   006C
+0066:  BTFSC  F9E.5
+0068:  GOTO   01E2
+006C:  BTFSS  F9D.2
+006E:  GOTO   0078
+0072:  BTFSC  F9E.2
+0074:  GOTO   013C
+0078:  BTFSS  FA0.6
+007A:  GOTO   0084
+007E:  BTFSC  FA1.6
+0080:  GOTO   019E
+0084:  MOVFF  0E,00
+0088:  MOVFF  0F,01
+008C:  MOVFF  10,02
+0090:  MOVFF  11,03
+0094:  MOVFF  0C,FE9
+0098:  MOVFF  07,FEA
+009C:  BSF    07.7
+009E:  MOVFF  08,FE1
+00A2:  MOVFF  09,FE2
+00A6:  MOVFF  0A,FD9
+00AA:  MOVFF  0B,FDA
+00AE:  MOVFF  12,FF3
+00B2:  MOVFF  13,FF4
+00B6:  MOVFF  14,FFA
+00BA:  MOVFF  15,FF5
+00BE:  MOVFF  16,FF6
+00C2:  MOVFF  17,FF7
+00C6:  MOVF   04,W
+00C8:  MOVFF  06,FE0
+00CC:  MOVFF  05,FD8
+00D0:  RETFIE 0
+.................... //************************************************************************************ 
+.................... //** 
+.................... //** 
+.................... //** 
+.................... //** 
+.................... //************************************************************************************ 
+....................  
+.................... #include <18F4550.h> 
+.................... //////////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F4550 
+00D2:  DATA 41,43
+00D4:  DATA 5F,4F
+00D6:  DATA 4B,20
+00D8:  DATA 25,64
+00DA:  DATA 20,00
+*
+0214:  MOVF   x7B,W
+0216:  CLRF   01
+0218:  SUBWF  x7A,W
+021A:  BC    0222
+021C:  MOVFF  7A,00
+0220:  BRA    023A
+0222:  CLRF   00
+0224:  MOVLW  08
+0226:  MOVWF  x7C
+0228:  RLCF   x7A,F
+022A:  RLCF   00,F
+022C:  MOVF   x7B,W
+022E:  SUBWF  00,W
+0230:  BTFSC  FD8.0
+0232:  MOVWF  00
+0234:  RLCF   01,F
+0236:  DECFSZ x7C,F
+0238:  BRA    0228
+023A:  RETURN 0
+023C:  MOVF   01,W
+023E:  MOVFF  74,7A
+0242:  MOVLW  64
+0244:  MOVWF  x7B
+0246:  RCALL  0214
+0248:  MOVFF  00,74
+024C:  MOVF   01,W
+024E:  MOVLW  30
+0250:  BNZ   0260
+0252:  BTFSS  x75.1
+0254:  BRA    0270
+0256:  BTFSC  x75.3
+0258:  BRA    0270
+025A:  BTFSC  x75.4
+025C:  MOVLW  20
+025E:  BRA    0266
+0260:  BCF    x75.3
+0262:  BCF    x75.4
+0264:  BSF    x75.0
+0266:  ADDWF  01,F
+0268:  MOVF   01,W
+026A:  BTFSS  F9E.4
+026C:  BRA    026A
+026E:  MOVWF  FAD
+0270:  MOVFF  74,7A
+0274:  MOVLW  0A
+0276:  MOVWF  x7B
+0278:  RCALL  0214
+027A:  MOVFF  00,74
+027E:  MOVF   01,W
+0280:  MOVLW  30
+0282:  BNZ   0290
+0284:  BTFSC  x75.3
+0286:  BRA    029A
+0288:  BTFSS  x75.0
+028A:  BRA    029A
+028C:  BTFSC  x75.4
+028E:  MOVLW  20
+0290:  ADDWF  01,F
+0292:  MOVF   01,W
+0294:  BTFSS  F9E.4
+0296:  BRA    0294
+0298:  MOVWF  FAD
+029A:  MOVLW  30
+029C:  ADDWF  x74,F
+029E:  MOVF   x74,W
+02A0:  BTFSS  F9E.4
+02A2:  BRA    02A0
+02A4:  MOVWF  FAD
+02A6:  GOTO   0344 (RETURN)
+*
+05A0:  ADDWF  FE8,W
+05A2:  CLRF   FF7
+05A4:  RLCF   FF7,F
+05A6:  ADDLW  BB
+05A8:  MOVWF  FF6
+05AA:  MOVLW  05
+05AC:  ADDWFC FF7,F
+05AE:  TBLRD*-
+05B0:  MOVF   FF5,W
+05B2:  MOVWF  FFA
+05B4:  TBLRD*
+05B6:  MOVF   FF5,W
+05B8:  MOVWF  FF9
+05BA:  DATA 62,04
+05BC:  DATA AC,04
+05BE:  DATA F4,04
+05C0:  DATA 3A,05
+*
+0740:  ADDWF  FE8,W
+0742:  CLRF   FF7
+0744:  RLCF   FF7,F
+0746:  ADDLW  5B
+0748:  MOVWF  FF6
+074A:  MOVLW  07
+074C:  ADDWFC FF7,F
+074E:  TBLRD*-
+0750:  MOVF   FF5,W
+0752:  MOVWF  FFA
+0754:  TBLRD*
+0756:  MOVF   FF5,W
+0758:  MOVWF  FF9
+075A:  DATA C8,06
+075C:  DATA E4,06
+075E:  DATA 00,07
+0760:  DATA 1C,07
+*
+0874:  TBLRD*+
+0876:  MOVFF  FF6,75
+087A:  MOVFF  FF7,76
+087E:  MOVF   FF5,W
+0880:  BTFSS  F9E.4
+0882:  BRA    0880
+0884:  MOVWF  FAD
+0886:  MOVFF  75,FF6
+088A:  MOVFF  76,FF7
+088E:  DECFSZ x74,F
+0890:  BRA    0874
+0892:  GOTO   09CC (RETURN)
+0896:  MOVLW  20
+0898:  BTFSS  x75.4
+089A:  MOVLW  30
+089C:  MOVWF  x76
+089E:  MOVFF  74,00
+08A2:  BTFSS  x74.7
+08A4:  BRA    08B6
+08A6:  COMF   00,F
+08A8:  INCF   00,F
+08AA:  MOVFF  00,74
+08AE:  MOVLW  2D
+08B0:  MOVWF  x76
+08B2:  BSF    x75.7
+08B4:  BSF    x75.0
+08B6:  MOVF   01,W
+08B8:  MOVFF  74,7A
+08BC:  MOVLW  64
+08BE:  MOVWF  x7B
+08C0:  RCALL  0214
+08C2:  MOVFF  00,74
+08C6:  MOVLW  30
+08C8:  ADDWF  01,W
+08CA:  MOVWF  x77
+08CC:  MOVFF  74,7A
+08D0:  MOVLW  0A
+08D2:  MOVWF  x7B
+08D4:  RCALL  0214
+08D6:  MOVLW  30
+08D8:  ADDWF  00,W
+08DA:  MOVWF  x79
+08DC:  MOVLW  30
+08DE:  ADDWF  01,W
+08E0:  MOVWF  x78
+08E2:  MOVFF  76,00
+08E6:  MOVLW  30
+08E8:  SUBWF  x77,W
+08EA:  BZ    08F4
+08EC:  BSF    x75.1
+08EE:  BTFSC  x75.7
+08F0:  BSF    x75.2
+08F2:  BRA    0918
+08F4:  MOVFF  76,77
+08F8:  MOVLW  20
+08FA:  MOVWF  x76
+08FC:  MOVLW  30
+08FE:  SUBWF  x78,W
+0900:  BZ    090A
+0902:  BSF    x75.0
+0904:  BTFSC  x75.7
+0906:  BSF    x75.1
+0908:  BRA    0918
+090A:  BTFSS  FD8.2
+090C:  BSF    x75.0
+090E:  BNZ   0918
+0910:  MOVFF  77,78
+0914:  MOVLW  20
+0916:  MOVWF  x77
+0918:  BTFSC  x75.2
+091A:  BRA    0926
+091C:  BTFSC  x75.1
+091E:  BRA    092E
+0920:  BTFSC  x75.0
+0922:  BRA    0936
+0924:  BRA    093E
+0926:  MOVF   x76,W
+0928:  BTFSS  F9E.4
+092A:  BRA    0928
+092C:  MOVWF  FAD
+092E:  MOVF   x77,W
+0930:  BTFSS  F9E.4
+0932:  BRA    0930
+0934:  MOVWF  FAD
+0936:  MOVF   x78,W
+0938:  BTFSS  F9E.4
+093A:  BRA    0938
+093C:  MOVWF  FAD
+093E:  MOVF   x79,W
+0940:  BTFSS  F9E.4
+0942:  BRA    0940
+0944:  MOVWF  FAD
+0946:  GOTO   09D6 (RETURN)
+....................  
+.................... #list 
+....................  
+....................  
+.................... #fuses HS,NOWDT,NOPROTECT,NOLVP,NODEBUG,USBDIV,VREGEN 
+....................  
+.................... #use delay(clock=24M) 
+*
+0350:  CLRF   FEA
+0352:  MOVLW  75
+0354:  MOVWF  FE9
+0356:  MOVF   FEF,W
+0358:  BZ    0376
+035A:  MOVLW  07
+035C:  MOVWF  01
+035E:  CLRF   00
+0360:  DECFSZ 00,F
+0362:  BRA    0360
+0364:  DECFSZ 01,F
+0366:  BRA    035E
+0368:  MOVLW  C7
+036A:  MOVWF  00
+036C:  DECFSZ 00,F
+036E:  BRA    036C
+0370:  NOP   
+0372:  DECFSZ FEF,F
+0374:  BRA    035A
+0376:  RETURN 0
+.................... #use rs232(baud=19200, xmit=PIN_C6, rcv=PIN_C7, stream=RS232) 
+.................... #byte INTCON2 = 0xFF1 
+.................... #bit  RBPU = INTCON2.7 
+.................... #include "..\include\LCD420_S3.c" 
+.................... //////////////////////////////////////////////////////////////////////////// 
+.................... //// LCD420_S3.C //// 
+.................... //// Driver for common 4x20 LCD modules //// 
+.................... //// //// 
+.................... //// lcd_init() Must be called before any other function. //// 
+.................... //// //// 
+.................... //// lcd_putc(c) Will display c on the next position of the LCD. //// 
+.................... //// The following have special meaning: //// 
+.................... //// \f Clear display //// 
+.................... //// \n Go to start of second line //// 
+.................... //// \b Move back one position //// 
+.................... //// \c Cursor on //// 
+.................... //// \d Blink character //// 
+.................... //// \1 Custom character DegC //// 
+.................... //// //// 
+.................... //// lcd_gotoxy(x,y) Set write position on LCD (upper left is 1,1) //// 
+.................... //// //// 
+.................... //// lcd_getc(x,y) Returns character at position x,y on LCD //// 
+.................... //// //// 
+.................... //////////////////////////////////////////////////////////////////////////// 
+.................... //// (C) Copyright 1996,1997 Custom Computer Services //// 
+.................... //// This source code may only be used by licensed users of the CCS C //// 
+.................... //// compiler. This source code may only be distributed to other //// 
+.................... //// licensed users of the CCS C compiler. No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission. //// 
+.................... //// Derivative programs created using this software in object code //// 
+.................... //// form are not restricted in any way. //// 
+.................... //////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... // These pins are for the PIC development board: 
+.................... // B1 enable 
+.................... // B2 rs 
+.................... // B3 rw 
+.................... // B4 D4 
+.................... // B5 D5 
+.................... // E1 D6 
+.................... // E0 D7 
+....................  
+.................... #if defined(__PCM__)  
+.................... #define LCD_RS PIN_B2 
+....................  
+.................... #elif defined(__PCH__) 
+.................... #define LCD_RS PIN_E0 
+.................... #endif 
+....................  
+.................... #define LCD_E PIN_B3			// B3 
+.................... //#define LCD_RS PIN_B2			// B2 Nop 
+.................... //#define LCD_RW PIN_B1			// B1 Nop 
+.................... #define LCD_DB4 PIN_B4 
+.................... #define LCD_DB5 PIN_B5 
+.................... #define LCD_DB6 PIN_B6 
+.................... #define LCD_DB7 PIN_B7 
+....................  
+.................... // Clear and home 
+.................... #define LCD_CLR_DISP 0x01 // Clear screen, home cursor, unshift display 
+.................... #define LCD_RETURN_HOME 0x02 // Home cursor, unshift display 
+....................  
+.................... // Set entry mode: display shift on/off, dec/inc cursor move direction 
+.................... #define LCD_ENTRY_DEC 0x04 // Display shift off, dec cursor move dir 
+.................... #define LCD_ENTRY_DEC_SHIFT 0x05 // Display shift on, dec cursor move dir 
+.................... #define LCD_ENTRY_INC 0x06 // Display shift off, inc cursor move dir 
+.................... #define LCD_ENTRY_INC_SHIFT 0x07 // Display shift on, inc cursor move dir 
+....................  
+.................... // Display on/off, cursor on/off, blinking char at cursor position 
+.................... #define LCD_DISP_OFF 0x08 // Display off 
+.................... #define LCD_DISP_ON 0x0C // Display on, cursor off 
+.................... #define LCD_DISP_ON_BLINK 0x0D // Display on, cursor off, blink char 
+.................... #define LCD_DISP_ON_CURSOR 0x0E // Display on, cursor on 
+.................... #define LCD_DISP_ON_CURSOR_BLINK 0x0F // Display on, cursor on, blink char 
+....................  
+.................... // Move cursor/shift display 
+.................... #define LCD_MOVE_CURSOR_LEFT 0x10 // Move cursor left (decrement) 
+.................... #define LCD_MOVE_CURSOR_RIGHT 0x14 // Move cursor right (increment) 
+.................... #define LCD_MOVE_DISP_LEFT 0x18 // Shift display left 
+.................... #define LCD_MOVE_DISP_RIGHT 0x1C // Shift display right 
+....................  
+.................... // Function set: set interface data length and number of display lines 
+.................... #define LCD_FUNCTION_4BIT_1LINE 0x20 // 4-bit interface, single line, 5x7 dots 
+.................... #define LCD_FUNCTION_4BIT_2LINES 0x28 // 4-bit interface, dual line, 5x7 dots 
+.................... #define LCD_FUNCTION_8BIT_1LINE 0x30 // 8-bit interface, single line, 5x7 dots 
+.................... #define LCD_FUNCTION_8BIT_2LINES 0x38 // 8-bit interface, dual line, 5x7 dots 
+....................  
+.................... #define LCD_CGRAM_BASE_ADDR 0x40 // Set the CGRAM address 
+.................... #define LCD_DDRAM_BASE_ADDR 0x80 // Set the DDRAM address 
+....................  
+.................... // Address positions 
+.................... #define LCD_LINE_1 0x80 // Position of start of line 1 
+.................... #define LCD_LINE_2 0xC0 // Position of start of line 2 
+.................... #define LCD_LINE_3 0x94 // Position of start of line 3 
+.................... #define LCD_LINE_4 0xD4 // Position of start of line 4 
+....................  
+.................... #define LCD_DEGREE_CHAR 0x00 // Ascii 00 
+....................  
+.................... #define lcd_type 2 // 0=5x7, 1=5x10, 2=2 lines 
+....................  
+.................... BYTE const LCD_INIT_STRING[4] = { 
+.................... LCD_FUNCTION_4BIT_2LINES | (lcd_type << 2), // Set mode: 4-bit, 2 lines, 5x7 dots 
+.................... LCD_DISP_ON, 
+.................... LCD_CLR_DISP, 
+.................... LCD_ENTRY_INC }; 
+....................  
+.................... BYTE const LCD_CUSTOM_CHARS[] = { 
+.................... 0x1C,0x14,0x1C,0x00,0x00,0x00,0x00,0x00, // DegC 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F, // Not used 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F, // Not used 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F, // Not used 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F, // Not used 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F, // Not used 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F, // Not used 
+.................... 0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F,0x1F }; // Not used 
+....................  
+.................... BYTE lcd_line; 
+.................... /* 
+.................... BYTE lcd_read_nibble() { 
+.................... BYTE retval; 
+....................  
+.................... #bit retval_0 = retval.0 
+.................... #bit retval_1 = retval.1 
+.................... #bit retval_2 = retval.2 
+.................... #bit retval_3 = retval.3 
+.................... retval = 0; 
+.................... output_high(LCD_E); 
+.................... delay_cycles(1); 
+.................... retval_0 = input(LCD_DB4); 
+.................... retval_1 = input(LCD_DB5); 
+.................... retval_2 = input(LCD_DB6); 
+.................... retval_3 = input(LCD_DB7); 
+.................... output_low(LCD_E); 
+.................... return(retval); 
+.................... } 
+.................... /* 
+.................... BYTE lcd_read_byte() { 
+.................... BYTE low,high; 
+....................  
+.................... output_high(LCD_RW); 
+.................... delay_cycles(1); 
+.................... high = lcd_read_nibble(); 
+.................... low = lcd_read_nibble(); 
+.................... return((high << 4) | low); 
+.................... } 
+.................... */ 
+.................... void lcd_send_nibble( BYTE n ) { 
+.................... 	output_bit(LCD_DB4, !!(n & 1)); 
+.................... 	output_bit(LCD_DB5, !!(n & 2)); 
+.................... 	output_bit(LCD_DB6, !!(n & 4)); 
+.................... 	output_bit(LCD_DB7, !!(n & 8)); 
+.................... 	delay_cycles(1); 
+.................... 	output_high(LCD_E); 
+.................... 	delay_cycles(2); 
+.................... 	output_low(LCD_E); 
+.................... } 
+....................  
+.................... void lcd_send_byte( BYTE address, BYTE n ) { 
+.................... 	output_low(LCD_RS); 
+.................... //	while (bit_test(lcd_read_byte(),7)); // wait until busy flag is low 
+.................... 	if (address) 
+.................... 		output_high(LCD_RS); 
+.................... 	else 
+.................... 		output_low(LCD_RS); 
+.................... //	delay_cycles(1); 
+.................... //	output_low(LCD_RW); 
+.................... //	delay_cycles(1); 
+.................... 	output_low(LCD_E); 
+.................... 	lcd_send_nibble(n >> 4); 
+.................... 	lcd_send_nibble(n & 0xf); 
+.................... 	delay_us(39);	 
+.................... } 
+....................  
+.................... void lcd_init() { 
+.................... BYTE i; 
+.................... 	for (i=1;i<=3;++i) { 
+.................... 		lcd_send_byte(0,0x20); 
+.................... 		delay_ms(2); 
+.................... 	} 
+.................... 	for (i=0;i<=sizeof(LCD_INIT_STRING)-1;++i){ 
+.................... 		lcd_send_byte(0, LCD_INIT_STRING[i]); 
+.................... 		delay_ms(2); 
+.................... 		} 
+.................... } 
+....................  
+.................... void lcd_init_custom_chars() { 
+.................... BYTE i; 
+....................  
+.................... 	lcd_send_byte(0,LCD_CGRAM_BASE_ADDR); 
+.................... 	for (i=0;i<64;i++) { 
+.................... 		lcd_send_byte(1,LCD_CUSTOM_CHARS[i]); 
+.................... 		delay_ms(2); 
+.................... 	} 
+.................... } 
+.................... void lcd_gotoxy( BYTE x, BYTE y ) { 
+.................... BYTE address; 
+....................  
+.................... 	switch(y) { 
+.................... 		case 1 : address=LCD_LINE_1; break; 
+.................... 		case 2 : address=LCD_LINE_2; break; 
+.................... 		case 3 : address=LCD_LINE_3; break; 
+.................... 		case 4 : address=LCD_LINE_4; break; 
+.................... 		 
+.................... 	} 
+.................... 	address+=x-1; 
+.................... 	lcd_send_byte(0,0x80 | address); 
+.................... } 
+....................  
+.................... void lcd_putc( char c ) { 
+.................... 	switch(c) { 
+.................... 		case '\f' : lcd_send_byte(0,LCD_CLR_DISP); 
+.................... 			lcd_line=1; 
+.................... 			delay_ms(2); break; 
+.................... 		case '\n' : lcd_gotoxy(1,++lcd_line); break; 
+.................... 		case '\b' : lcd_send_byte(0,LCD_MOVE_CURSOR_LEFT); break; 
+.................... 		case '\1' : lcd_send_byte(1,LCD_DEGREE_CHAR); break;				// caractere degree 
+.................... 		default : lcd_send_byte(1,c); break; 
+.................... 	} 
+.................... } 
+....................  
+.................... void cursor( byte c ) { 
+.................... 	switch(c) { 
+.................... 		case 0 : lcd_send_byte(0,LCD_DISP_ON);break;						// curseur OFF 
+.................... 		case 1 : lcd_send_byte(0,LCD_DISP_ON_CURSOR); break;				// curseur ON 
+.................... 		case 2 : lcd_send_byte(0,LCD_DISP_ON_BLINK); break;					// cursour OFF blink 
+.................... 		case 3 : lcd_send_byte(0,LCD_DISP_ON_CURSOR_BLINK); break;			// cursour ON blink 
+.................... 	} 
+.................... } 
+....................  
+.................... /* 
+.................... char lcd_getc( BYTE x, BYTE y ) { 
+.................... char value; 
+....................  
+.................... 	lcd_gotoxy(x,y); 
+.................... 	while (bit_test(lcd_read_byte(),7)); // wait until busy flag is low 
+.................... 	output_high(LCD_RS); 
+.................... 	value = lcd_read_byte(); 
+.................... 	output_low(LCD_RS); 
+.................... 	return(value); 
+.................... }*/ 
+....................  
+....................  
+.................... // Variables : 
+....................  
+.................... const int16 PosCharge = 4000, PosZero = 48000, PosUn = 49000, PosDeux = 50000, PosTrois = 51000, EcartRxInf = 100, EcartRxSup = 1100; 
+....................  
+.................... const int8 BUFFER_SIZE = 16; 
+....................  
+.................... int16 Timer0_Rx = 0, TimerTx[20]; 
+....................  
+.................... int8 DeuxBitsTx = 0, N_AlternanceTx = 0, N_AlternanceTxMax = 16, N_AlternanceRx = 0, N_AlternanceRxPrec = 0, N_AlternanceRxMax = 16, VarBoucleTx = 0; 
+....................  
+.................... int8 buffer[BUFFER_SIZE], next_in = 0, next_out = 0, SerialChar[5], N_Alternance = 1, MessageTx[5], N_MessageTx = 1, DeuxBitsRx = 0, N_DeuxBitsRx = 0, MessageRx[5], N_MessageRx = 1, AdresseModule = 228; 
+....................  
+.................... int1 FlagBouton = 0, FlagRx = 0, FlagRxAlternance = 0, StartTx = 0, TxOn = 0, RxOn = 0, Flag_Positif = 0, Flag_WtD_P = 0, Flag_Triac = 0; 
+....................  
+.................... #define bkbhit (next_in != next_out) 
+....................  
+.................... void initialisation()  // Routine d'initialisation 
+.................... { 
+....................     set_tris_a(0b00000001); 
+*
+02AA:  MOVLW  01
+02AC:  MOVWF  F92
+....................     output_a(0); 
+02AE:  CLRF   F92
+02B0:  CLRF   F89
+....................     set_tris_b(255); 
+02B2:  MOVLW  FF
+02B4:  MOVWF  F93
+....................     RBPU = 0;   // Active le pull up sur les IO du port B mis en entrée 
+02B6:  BCF    FF1.7
+....................     set_tris_d(0b00000000); 
+02B8:  MOVLW  00
+02BA:  MOVWF  F95
+....................     output_d(0);    // Tous les pins à 0 
+02BC:  CLRF   F95
+02BE:  CLRF   F8C
+....................     setup_ccp1(CCP_CAPTURE_RE);     // Configure CCP1 sur flanc montant 
+02C0:  BSF    F94.2
+02C2:  CLRF   FBD
+02C4:  MOVLW  05
+02C6:  MOVWF  FBD
+02C8:  CLRF   FB7
+02CA:  CLRF   FB6
+....................     setup_comparator(A0_VR_A1_VR);      // Active les comparateurs avec référence interne 
+02CC:  MOVLW  06
+02CE:  MOVWF  FB4
+02D0:  MOVF   F92,W
+02D2:  IORLW  03
+02D4:  MOVWF  F92
+02D6:  MOVLW  13
+02D8:  MOVWF  00
+02DA:  DECFSZ 00,F
+02DC:  BRA    02DA
+02DE:  BRA    02E0
+02E0:  MOVF   FB4,W
+02E2:  BCF    FA1.6
+....................     setup_vref(VREF_LOW | 6); // Règle la référence à 5V / 4 
+02E4:  MOVLW  A6
+02E6:  MOVWF  FB5
+....................     setup_timer_0(RTCC_DIV_1|RTCC_INTERNAL);    // Timer 0 clock interne et prédiviseur de 1 
+02E8:  MOVLW  88
+02EA:  MOVWF  FD5
+....................     setup_timer_1(T1_DIV_BY_1|T1_INTERNAL);     // Timer 1 clock interne et prédiviseur de 1 
+02EC:  MOVLW  85
+02EE:  MOVWF  FCD
+....................     enable_interrupts(INT_CCP1);    // Active l'interruption sur CCP1 
+02F0:  BSF    F9D.2
+....................     enable_interrupts(INT_COMP);    // Active l'interruption sur le comparateur 
+02F2:  BSF    FA0.6
+....................     clear_interrupt(INT_RDA); 
+02F4:  MOVF   FAE,W
+....................     enable_interrupts(INT_RDA);    // Active l'interruption sur le port série 
+02F6:  BSF    F9D.5
+....................     enable_interrupts(GLOBAL);    // Active l'interruption globale 
+02F8:  MOVLW  C0
+02FA:  IORWF  FF2,F
+....................     AdresseModule = read_eeprom(1); 
+02FC:  MOVFF  FF2,74
+0300:  BCF    FF2.7
+0302:  MOVLW  01
+0304:  MOVWF  FA9
+0306:  BCF    FA6.6
+0308:  BCF    FA6.7
+030A:  BSF    FA6.0
+030C:  MOVF   FA8,W
+030E:  BTFSC  x74.7
+0310:  BSF    FF2.7
+0312:  MOVWF  x71
+....................     Flag_Triac = read_eeprom(2); 
+0314:  MOVFF  FF2,74
+0318:  BCF    FF2.7
+031A:  MOVLW  02
+031C:  MOVWF  FA9
+031E:  BCF    FA6.6
+0320:  BCF    FA6.7
+0322:  BSF    FA6.0
+0324:  MOVF   FA8,W
+0326:  BTFSC  x74.7
+0328:  BSF    FF2.7
+032A:  MOVWF  01
+032C:  BCF    x73.0
+032E:  BTFSC  01.0
+0330:  BSF    x73.0
+....................     if(Flag_Triac) output_high(PIN_E1); 
+0332:  BTFSS  x73.0
+0334:  BRA    033A
+0336:  BCF    F96.1
+0338:  BSF    F8D.1
+....................     printf("%u ",AdresseModule); 
+033A:  MOVFF  71,74
+033E:  MOVLW  1B
+0340:  MOVWF  x75
+0342:  BRA    023C
+0344:  MOVLW  20
+0346:  BTFSS  F9E.4
+0348:  BRA    0346
+034A:  MOVWF  FAD
+034C:  GOTO   0A58 (RETURN)
+.................... } 
+....................  
+.................... int8 bgetc() // lecture du buffer serie 
+.................... {						 
+....................    int8 c; 
+....................    while(!bkbhit) ;				// tant que le buffer n'est pas vide 
+*
+084E:  MOVF   5C,W
+0850:  SUBWF  5B,W
+0852:  BZ    084E
+....................    c=buffer[next_out];				// lecture du buffer 
+0854:  CLRF   03
+0856:  MOVF   5C,W
+0858:  ADDLW  4B
+085A:  MOVWF  FE9
+085C:  MOVLW  00
+085E:  ADDWFC 03,W
+0860:  MOVWF  FEA
+0862:  MOVFF  FEF,74
+....................    next_out=(next_out+1) % BUFFER_SIZE;		// mise a jour du pointeur 
+0866:  MOVLW  01
+0868:  ADDWF  5C,W
+086A:  ANDLW  0F
+086C:  MOVWF  5C
+....................    return(c); 
+086E:  MOVFF  74,01
+0872:  RETURN 0
+.................... } 
+....................  
+.................... void SetupTransmission(int8 AdresseRecepteur, int8 Commande)    // Remplis le tableau des valeurs pour Timer1 en fonction des données à envoyer 
+.................... { 
+....................     if(!TxOn && !StartTx) 
+*
+05C2:  BTFSC  x72.4
+05C4:  BRA    073E
+05C6:  BTFSC  x72.3
+05C8:  BRA    073E
+....................     { 
+....................         N_MessageTx = 1; 
+05CA:  MOVLW  01
+05CC:  MOVWF  x68
+....................         MessageTx[1] = 150; 
+05CE:  MOVLW  96
+05D0:  MOVWF  x64
+....................         MessageTx[2] = AdresseRecepteur; 
+05D2:  MOVFF  75,65
+....................         MessageTx[3] = AdresseModule; 
+05D6:  MOVFF  71,66
+....................         MessageTx[4] = Commande; 
+05DA:  MOVFF  76,67
+....................  
+....................         for(VarBoucleTx = 1 ; VarBoucleTx <= N_AlternanceTxMax ; VarBoucleTx++) 
+05DE:  MOVLW  01
+05E0:  MOVWF  4A
+05E2:  MOVF   4A,W
+05E4:  SUBWF  46,W
+05E6:  BTFSS  FD8.0
+05E8:  BRA    073A
+....................         { 
+....................             if(VarBoucleTx == 1 || VarBoucleTx == 5 || VarBoucleTx == 9 || VarBoucleTx == 13) DeuxBitsTx = MessageTx[N_MessageTx] & 3; 
+05EA:  DECFSZ 4A,W
+05EC:  BRA    05F0
+05EE:  BRA    0602
+05F0:  MOVF   4A,W
+05F2:  SUBLW  05
+05F4:  BZ    0602
+05F6:  MOVF   4A,W
+05F8:  SUBLW  09
+05FA:  BZ    0602
+05FC:  MOVF   4A,W
+05FE:  SUBLW  0D
+0600:  BNZ   0616
+0602:  CLRF   03
+0604:  MOVF   x68,W
+0606:  ADDLW  63
+0608:  MOVWF  FE9
+060A:  MOVLW  00
+060C:  ADDWFC 03,W
+060E:  MOVWF  FEA
+0610:  MOVF   FEF,W
+0612:  ANDLW  03
+0614:  MOVWF  44
+....................  
+....................             if(VarBoucleTx == 2 || VarBoucleTx == 6 || VarBoucleTx == 10 || VarBoucleTx == 14) DeuxBitsTx = MessageTx[N_MessageTx] >> 2 & 3; 
+0616:  MOVF   4A,W
+0618:  SUBLW  02
+061A:  BZ    062E
+061C:  MOVF   4A,W
+061E:  SUBLW  06
+0620:  BZ    062E
+0622:  MOVF   4A,W
+0624:  SUBLW  0A
+0626:  BZ    062E
+0628:  MOVF   4A,W
+062A:  SUBLW  0E
+062C:  BNZ   064C
+062E:  CLRF   03
+0630:  MOVF   x68,W
+0632:  ADDLW  63
+0634:  MOVWF  FE9
+0636:  MOVLW  00
+0638:  ADDWFC 03,W
+063A:  MOVWF  FEA
+063C:  RRCF   FEF,W
+063E:  MOVWF  00
+0640:  RRCF   00,F
+0642:  MOVLW  3F
+0644:  ANDWF  00,F
+0646:  MOVF   00,W
+0648:  ANDLW  03
+064A:  MOVWF  44
+....................  
+....................             if(VarBoucleTx == 3 || VarBoucleTx == 7 || VarBoucleTx == 11 || VarBoucleTx == 15) DeuxBitsTx = MessageTx[N_MessageTx] >> 4 & 3; 
+064C:  MOVF   4A,W
+064E:  SUBLW  03
+0650:  BZ    0664
+0652:  MOVF   4A,W
+0654:  SUBLW  07
+0656:  BZ    0664
+0658:  MOVF   4A,W
+065A:  SUBLW  0B
+065C:  BZ    0664
+065E:  MOVF   4A,W
+0660:  SUBLW  0F
+0662:  BNZ   0680
+0664:  CLRF   03
+0666:  MOVF   x68,W
+0668:  ADDLW  63
+066A:  MOVWF  FE9
+066C:  MOVLW  00
+066E:  ADDWFC 03,W
+0670:  MOVWF  FEA
+0672:  SWAPF  FEF,W
+0674:  MOVWF  00
+0676:  MOVLW  0F
+0678:  ANDWF  00,F
+067A:  MOVF   00,W
+067C:  ANDLW  03
+067E:  MOVWF  44
+....................  
+....................             if(VarBoucleTx == 4 || VarBoucleTx == 8 || VarBoucleTx == 12 || VarBoucleTx == 16) 
+0680:  MOVF   4A,W
+0682:  SUBLW  04
+0684:  BZ    0698
+0686:  MOVF   4A,W
+0688:  SUBLW  08
+068A:  BZ    0698
+068C:  MOVF   4A,W
+068E:  SUBLW  0C
+0690:  BZ    0698
+0692:  MOVF   4A,W
+0694:  SUBLW  10
+0696:  BNZ   06BC
+....................             { 
+....................                 DeuxBitsTx = MessageTx[N_MessageTx] >> 6 & 3; 
+0698:  CLRF   03
+069A:  MOVF   x68,W
+069C:  ADDLW  63
+069E:  MOVWF  FE9
+06A0:  MOVLW  00
+06A2:  ADDWFC 03,W
+06A4:  MOVWF  FEA
+06A6:  SWAPF  FEF,W
+06A8:  MOVWF  00
+06AA:  RRCF   00,F
+06AC:  RRCF   00,F
+06AE:  MOVLW  03
+06B0:  ANDWF  00,F
+06B2:  MOVF   00,W
+06B4:  ANDLW  03
+06B6:  MOVWF  44
+....................                 N_MessageTx = N_MessageTx + 1; 
+06B8:  MOVLW  01
+06BA:  ADDWF  x68,F
+....................             } 
+....................  
+....................             switch(DeuxBitsTx) 
+06BC:  MOVF   44,W
+06BE:  ADDLW  FC
+06C0:  BC    0736
+06C2:  ADDLW  04
+06C4:  GOTO   0740
+....................             { 
+....................                 case 0 : 
+....................                     TimerTx[VarBoucleTx] = 65535 - PosZero; 
+06C8:  BCF    FD8.0
+06CA:  RLCF   4A,W
+06CC:  CLRF   03
+06CE:  ADDLW  1C
+06D0:  MOVWF  FE9
+06D2:  MOVLW  00
+06D4:  ADDWFC 03,W
+06D6:  MOVWF  FEA
+06D8:  MOVLW  44
+06DA:  MOVWF  FEC
+06DC:  MOVF   FED,F
+06DE:  MOVLW  7F
+06E0:  MOVWF  FEF
+....................                 break; 
+06E2:  BRA    0736
+....................                 case 1 : 
+....................                     TimerTx[VarBoucleTx] = 65535 - PosUn; 
+06E4:  BCF    FD8.0
+06E6:  RLCF   4A,W
+06E8:  CLRF   03
+06EA:  ADDLW  1C
+06EC:  MOVWF  FE9
+06EE:  MOVLW  00
+06F0:  ADDWFC 03,W
+06F2:  MOVWF  FEA
+06F4:  MOVLW  40
+06F6:  MOVWF  FEC
+06F8:  MOVF   FED,F
+06FA:  MOVLW  97
+06FC:  MOVWF  FEF
+....................                 break; 
+06FE:  BRA    0736
+....................                 case 2 : 
+....................                     TimerTx[VarBoucleTx] = 65535 - PosDeux; 
+0700:  BCF    FD8.0
+0702:  RLCF   4A,W
+0704:  CLRF   03
+0706:  ADDLW  1C
+0708:  MOVWF  FE9
+070A:  MOVLW  00
+070C:  ADDWFC 03,W
+070E:  MOVWF  FEA
+0710:  MOVLW  3C
+0712:  MOVWF  FEC
+0714:  MOVF   FED,F
+0716:  MOVLW  AF
+0718:  MOVWF  FEF
+....................                 break; 
+071A:  BRA    0736
+....................                 case 3 : 
+....................                     TimerTx[VarBoucleTx] = 65535 - PosTrois; 
+071C:  BCF    FD8.0
+071E:  RLCF   4A,W
+0720:  CLRF   03
+0722:  ADDLW  1C
+0724:  MOVWF  FE9
+0726:  MOVLW  00
+0728:  ADDWFC 03,W
+072A:  MOVWF  FEA
+072C:  MOVLW  38
+072E:  MOVWF  FEC
+0730:  MOVF   FED,F
+0732:  MOVLW  C7
+0734:  MOVWF  FEF
+....................                 break; 
+....................             } 
+0736:  INCF   4A,F
+0738:  BRA    05E2
+....................         } 
+....................         TxOn = 0; 
+073A:  BCF    x72.4
+....................         StartTx = 1; 
+073C:  BSF    x72.3
+....................     } 
+073E:  RETURN 0
+.................... } 
+....................  
+.................... void Transmission()    // Règle le timer à chaque alternance si besoin 
+.................... { 
+....................     if(TxOn && !StartTx) 
+*
+00DC:  BTFSS  x72.4
+00DE:  BRA    0120
+00E0:  BTFSC  x72.3
+00E2:  BRA    0120
+....................     { 
+....................         if(0 < N_AlternanceTx && N_AlternanceTx <= N_AlternanceTxMax) 
+00E4:  MOVF   45,W
+00E6:  SUBLW  00
+00E8:  BC    0114
+00EA:  MOVF   45,W
+00EC:  SUBWF  46,W
+00EE:  BNC   0114
+....................         { 
+....................             set_timer1(TimerTx[N_AlternanceTx]); 
+00F0:  BCF    FD8.0
+00F2:  RLCF   45,W
+00F4:  CLRF   03
+00F6:  ADDLW  1C
+00F8:  MOVWF  FE9
+00FA:  MOVLW  00
+00FC:  ADDWFC 03,W
+00FE:  MOVWF  FEA
+0100:  MOVFF  FEC,7E
+0104:  MOVF   FED,F
+0106:  MOVFF  FEF,7D
+010A:  MOVFF  7E,FCF
+010E:  MOVFF  7D,FCE
+....................         } 
+0112:  BRA    0120
+....................         else 
+....................         { 
+....................             TxOn = 0; 
+0114:  BCF    x72.4
+....................             StartTx = 0; 
+0116:  BCF    x72.3
+....................             disable_interrupts(INT_TIMER1);    // Desactive l'interruption sur Timer1 
+0118:  BCF    F9D.0
+....................             clear_interrupt(INT_TIMER1); 
+011A:  BCF    F9E.0
+....................             enable_interrupts(INT_COMP);    // Active l'interruption sur le comparateur 
+011C:  BSF    FA0.6
+....................             clear_interrupt(INT_COMP); 
+011E:  BCF    FA1.6
+....................         } 
+....................     } 
+....................  
+....................     if(StartTx && !TxOn) // On active l'interruption sur timer1 et on le règle pour une impulsion de charge du condensateur 
+0120:  BTFSS  x72.3
+0122:  BRA    0138
+0124:  BTFSC  x72.4
+0126:  BRA    0138
+....................     { 
+....................         set_timer1(65535 - PosCharge); 
+0128:  MOVLW  F0
+012A:  MOVWF  FCF
+012C:  MOVLW  5F
+012E:  MOVWF  FCE
+....................         disable_interrupts(INT_COMP);    // Desactive l'interruption sur le comparateur 
+0130:  BCF    FA0.6
+....................         enable_interrupts(INT_TIMER1);    // Active l'interruption sur Timer1 
+0132:  BSF    F9D.0
+....................         clear_interrupt(INT_TIMER1); 
+0134:  BCF    F9E.0
+....................         N_AlternanceTx = 0;   // Met le compteur d'alternance à 0 
+0136:  CLRF   45
+....................     } 
+0138:  GOTO   0194 (RETURN)
+.................... } 
+....................  
+.................... void Reception()    // Analyse les impulsions détectées par le comparateur pour reconstituer le message 
+.................... { 
+....................     if(FlagRx) 
+*
+0378:  BTFSS  x72.1
+037A:  BRA    059C
+....................     { 
+....................         output_high(PIN_D1); 
+037C:  BCF    F95.1
+037E:  BSF    F8C.1
+....................  
+....................         if(48000 < Timer0_Rx < 52000 && !FlagRxAlternance) 
+0380:  MOVF   1B,W
+0382:  SUBLW  BA
+0384:  BC    0390
+0386:  XORLW  FF
+0388:  BNZ   0394
+038A:  MOVF   1A,W
+038C:  SUBLW  80
+038E:  BNC   0394
+0390:  MOVLW  00
+0392:  BRA    0396
+0394:  MOVLW  01
+0396:  BTFSC  x72.2
+0398:  BRA    0596
+....................         { 
+....................  
+....................             // On regarde quelle position d'impulsion on a reçue : 
+....................             if(PosZero + EcartRxInf < Timer0_Rx && Timer0_Rx < PosZero + EcartRxSup) // Position 0 = 00 
+039A:  MOVF   1B,W
+039C:  SUBLW  BA
+039E:  BC    03BC
+03A0:  XORLW  FF
+03A2:  BNZ   03AA
+03A4:  MOVF   1A,W
+03A6:  SUBLW  E4
+03A8:  BC    03BC
+03AA:  MOVF   1B,W
+03AC:  SUBLW  BF
+03AE:  BNC   03BC
+03B0:  BNZ   03B8
+03B2:  MOVF   1A,W
+03B4:  SUBLW  CB
+03B6:  BNC   03BC
+....................             { 
+....................                 DeuxBitsRx = 0; 
+03B8:  CLRF   x69
+....................                 FlagRxAlternance = 1; 
+03BA:  BSF    x72.2
+....................             } 
+....................             if(PosUn + EcartRxInf < Timer0_Rx && Timer0_Rx < PosUn + EcartRxSup) // Position 1 = 01 
+03BC:  MOVF   1B,W
+03BE:  SUBLW  BE
+03C0:  BC    03E0
+03C2:  XORLW  FF
+03C4:  BNZ   03CC
+03C6:  MOVF   1A,W
+03C8:  SUBLW  CC
+03CA:  BC    03E0
+03CC:  MOVF   1B,W
+03CE:  SUBLW  C3
+03D0:  BNC   03E0
+03D2:  BNZ   03DA
+03D4:  MOVF   1A,W
+03D6:  SUBLW  B3
+03D8:  BNC   03E0
+....................             { 
+....................                 DeuxBitsRx = 1; 
+03DA:  MOVLW  01
+03DC:  MOVWF  x69
+....................                 FlagRxAlternance = 1; 
+03DE:  BSF    x72.2
+....................             } 
+....................             if(PosDeux + EcartRxInf < Timer0_Rx && Timer0_Rx < PosDeux + EcartRxSup) // Position 2 = 10 
+03E0:  MOVF   1B,W
+03E2:  SUBLW  C2
+03E4:  BC    0404
+03E6:  XORLW  FF
+03E8:  BNZ   03F0
+03EA:  MOVF   1A,W
+03EC:  SUBLW  B4
+03EE:  BC    0404
+03F0:  MOVF   1B,W
+03F2:  SUBLW  C7
+03F4:  BNC   0404
+03F6:  BNZ   03FE
+03F8:  MOVF   1A,W
+03FA:  SUBLW  9B
+03FC:  BNC   0404
+....................             { 
+....................                 DeuxBitsRx = 2; 
+03FE:  MOVLW  02
+0400:  MOVWF  x69
+....................                 FlagRxAlternance = 1; 
+0402:  BSF    x72.2
+....................             } 
+....................             if(PosTrois + EcartRxInf < Timer0_Rx && Timer0_Rx < PosTrois + EcartRxSup) // Position 3 = 11 
+0404:  MOVF   1B,W
+0406:  SUBLW  C6
+0408:  BC    0428
+040A:  XORLW  FF
+040C:  BNZ   0414
+040E:  MOVF   1A,W
+0410:  SUBLW  9C
+0412:  BC    0428
+0414:  MOVF   1B,W
+0416:  SUBLW  CB
+0418:  BNC   0428
+041A:  BNZ   0422
+041C:  MOVF   1A,W
+041E:  SUBLW  83
+0420:  BNC   0428
+....................             { 
+....................                 DeuxBitsRx = 3; 
+0422:  MOVLW  03
+0424:  MOVWF  x69
+....................                 FlagRxAlternance = 1; 
+0426:  BSF    x72.2
+....................             } 
+....................  
+....................             // Si on a pas reçu de position valide on quitte : 
+....................             if(!FlagRxAlternance) 
+0428:  BTFSC  x72.2
+042A:  BRA    0434
+....................             { 
+....................                 FlagRx = 0; 
+042C:  BCF    x72.1
+....................                 output_low(PIN_D1); 
+042E:  BCF    F95.1
+0430:  BCF    F8C.1
+....................                 return; 
+0432:  BRA    059C
+....................             } 
+....................  
+....................             if(!RxOn) 
+0434:  BTFSC  x72.5
+0436:  BRA    0446
+....................             { 
+....................                 RxOn = 1; 
+0438:  BSF    x72.5
+....................                 N_AlternanceRx = 1; 
+043A:  MOVLW  01
+043C:  MOVWF  47
+....................                 N_AlternanceRxPrec = 0; 
+043E:  CLRF   48
+....................                 N_DeuxBitsRx = 1; 
+0440:  MOVWF  x6A
+....................                 N_MessageRx = 1; 
+0442:  MOVWF  x70
+....................             } 
+0444:  BRA    0448
+....................             else 
+....................             { 
+....................                 N_DeuxBitsRx++; 
+0446:  INCF   x6A,F
+....................             } 
+....................  
+....................             // On place les deux bits obtenus au bon endroit : 
+....................             if((N_AlternanceRxPrec + 1) == N_AlternanceRx) // Si on a pas raté d'impulsion 
+0448:  MOVLW  01
+044A:  ADDWF  48,W
+044C:  SUBWF  47,W
+044E:  BTFSS  FD8.2
+0450:  BRA    0594
+....................             { 
+....................                 switch(N_DeuxBitsRx) 
+0452:  MOVLW  01
+0454:  SUBWF  x6A,W
+0456:  ADDLW  FC
+0458:  BTFSC  FD8.0
+045A:  BRA    0586
+045C:  ADDLW  04
+045E:  GOTO   05A0
+....................                 { 
+....................                     case 1 : // Bits 0 et 1 : 
+....................                         MessageRx[N_MessageRx] = 0; 
+0462:  CLRF   03
+0464:  MOVF   x70,W
+0466:  ADDLW  6B
+0468:  MOVWF  FE9
+046A:  MOVLW  00
+046C:  ADDWFC 03,W
+046E:  MOVWF  FEA
+0470:  CLRF   FEF
+....................                         MessageRx[N_MessageRx] = MessageRx[N_MessageRx] + DeuxBitsRx; 
+0472:  CLRF   03
+0474:  MOVF   x70,W
+0476:  ADDLW  6B
+0478:  MOVWF  01
+047A:  MOVLW  00
+047C:  ADDWFC 03,F
+047E:  MOVFF  03,75
+0482:  CLRF   03
+0484:  MOVF   x70,W
+0486:  ADDLW  6B
+0488:  MOVWF  FE9
+048A:  MOVLW  00
+048C:  ADDWFC 03,W
+048E:  MOVWF  FEA
+0490:  MOVF   x69,W
+0492:  ADDWF  FEF,W
+0494:  MOVFF  75,FEA
+0498:  MOVFF  01,FE9
+049C:  MOVWF  FEF
+....................                         if(N_MessageRx == 1 && DeuxBitsRx != 2) RxOn = 0; // Vérifie que la première impulsion du premier octet est 10 sinon on recommence 
+049E:  DECFSZ x70,W
+04A0:  BRA    04AA
+04A2:  MOVF   x69,W
+04A4:  SUBLW  02
+04A6:  BZ    04AA
+04A8:  BCF    x72.5
+....................                         break; 
+04AA:  BRA    0586
+....................                     case 2 : // Bits 2 et 3 : 
+....................                         MessageRx[N_MessageRx] = MessageRx[N_MessageRx] + (DeuxBitsRx << 2); 
+04AC:  CLRF   03
+04AE:  MOVF   x70,W
+04B0:  ADDLW  6B
+04B2:  MOVWF  01
+04B4:  MOVLW  00
+04B6:  ADDWFC 03,F
+04B8:  MOVFF  03,75
+04BC:  CLRF   03
+04BE:  MOVF   x70,W
+04C0:  ADDLW  6B
+04C2:  MOVWF  FE9
+04C4:  MOVLW  00
+04C6:  ADDWFC 03,W
+04C8:  MOVWF  FEA
+04CA:  MOVFF  FEF,76
+04CE:  RLCF   x69,W
+04D0:  MOVWF  00
+04D2:  RLCF   00,F
+04D4:  MOVLW  FC
+04D6:  ANDWF  00,F
+04D8:  MOVF   00,W
+04DA:  ADDWF  x76,W
+04DC:  MOVFF  75,FEA
+04E0:  MOVFF  01,FE9
+04E4:  MOVWF  FEF
+....................                         if(N_MessageRx == 1 && DeuxBitsRx != 1) RxOn = 0; // Vérifie que la deuxième impulsion du premier octet est 01 sinon on recommence 
+04E6:  DECFSZ x70,W
+04E8:  BRA    04F2
+04EA:  DECFSZ x69,W
+04EC:  BRA    04F0
+04EE:  BRA    04F2
+04F0:  BCF    x72.5
+....................                         break; 
+04F2:  BRA    0586
+....................                     case 3 : // Bits 4 et 5 : 
+....................                         MessageRx[N_MessageRx] = MessageRx[N_MessageRx] + (DeuxBitsRx << 4); 
+04F4:  CLRF   03
+04F6:  MOVF   x70,W
+04F8:  ADDLW  6B
+04FA:  MOVWF  01
+04FC:  MOVLW  00
+04FE:  ADDWFC 03,F
+0500:  MOVFF  03,75
+0504:  CLRF   03
+0506:  MOVF   x70,W
+0508:  ADDLW  6B
+050A:  MOVWF  FE9
+050C:  MOVLW  00
+050E:  ADDWFC 03,W
+0510:  MOVWF  FEA
+0512:  MOVFF  FEF,76
+0516:  SWAPF  x69,W
+0518:  MOVWF  00
+051A:  MOVLW  F0
+051C:  ANDWF  00,F
+051E:  MOVF   00,W
+0520:  ADDWF  x76,W
+0522:  MOVFF  75,FEA
+0526:  MOVFF  01,FE9
+052A:  MOVWF  FEF
+....................                         if(N_MessageRx == 1 && DeuxBitsRx != 1) RxOn = 0; // Vérifie que la troisème impulsion du premier octet est 01 sinon on recommence 
+052C:  DECFSZ x70,W
+052E:  BRA    0538
+0530:  DECFSZ x69,W
+0532:  BRA    0536
+0534:  BRA    0538
+0536:  BCF    x72.5
+....................                         break; 
+0538:  BRA    0586
+....................                     case 4 : // Bits 6 et 7 : 
+....................                         MessageRx[N_MessageRx] = MessageRx[N_MessageRx] + (DeuxBitsRx << 6); 
+053A:  CLRF   03
+053C:  MOVF   x70,W
+053E:  ADDLW  6B
+0540:  MOVWF  01
+0542:  MOVLW  00
+0544:  ADDWFC 03,F
+0546:  MOVFF  03,75
+054A:  CLRF   03
+054C:  MOVF   x70,W
+054E:  ADDLW  6B
+0550:  MOVWF  FE9
+0552:  MOVLW  00
+0554:  ADDWFC 03,W
+0556:  MOVWF  FEA
+0558:  MOVFF  FEF,76
+055C:  SWAPF  x69,W
+055E:  MOVWF  00
+0560:  RLCF   00,F
+0562:  RLCF   00,F
+0564:  MOVLW  C0
+0566:  ANDWF  00,F
+0568:  MOVF   00,W
+056A:  ADDWF  x76,W
+056C:  MOVFF  75,FEA
+0570:  MOVFF  01,FE9
+0574:  MOVWF  FEF
+....................                         if(N_MessageRx == 1 && DeuxBitsRx != 2) RxOn = 0; // Vérifie que la quatrième impulsion du premier octet est 10 sinon on recommence 
+0576:  DECFSZ x70,W
+0578:  BRA    0582
+057A:  MOVF   x69,W
+057C:  SUBLW  02
+057E:  BZ    0582
+0580:  BCF    x72.5
+....................                         N_MessageRx++; 
+0582:  INCF   x70,F
+....................                         N_DeuxBitsRx = 0; 
+0584:  CLRF   x6A
+....................                         break; 
+....................                 } 
+....................                 if(N_AlternanceRx == N_AlternanceRxMax) 
+0586:  MOVF   49,W
+0588:  SUBWF  47,W
+058A:  BNZ   0590
+....................                 { 
+.................... //                    printf("%u %u %u ",MessageRx[2],MessageRx[3],MessageRx[4]); 
+....................                     Flag_WtD_P = 1; 
+058C:  BSF    x72.7
+....................                     RxOn = 0; 
+058E:  BCF    x72.5
+....................                 } 
+....................                 N_AlternanceRxPrec++; 
+0590:  INCF   48,F
+....................             } 
+0592:  BRA    0596
+....................             else RxOn = 0; // On a raté une impulsion on redémarre la réception 
+0594:  BCF    x72.5
+....................         } 
+....................         FlagRx = 0; 
+0596:  BCF    x72.1
+....................         output_low(PIN_D1); 
+0598:  BCF    F95.1
+059A:  BCF    F8C.1
+....................     } 
+059C:  GOTO   0A68 (RETURN)
+.................... } 
+....................  
+.................... void WhatToDoPowerline()    // Fonction qui décide de quoi faire en fonction de la commande reçue par courannt porteur 
+.................... { 
+....................     if(Flag_WtD_P) 
+*
+0762:  BTFSS  x72.7
+0764:  BRA    084A
+....................     { 
+....................         int8 AdresseSource = 0; 
+0766:  CLRF   x74
+....................         if(MessageRx[2] == AdresseModule) 
+0768:  MOVF   x71,W
+076A:  SUBWF  x6D,W
+076C:  BTFSS  FD8.2
+076E:  BRA    0848
+....................         { 
+....................             AdresseSource = MessageRx[3]; 
+0770:  MOVFF  6E,74
+....................  
+....................             switch(MessageRx[4]) // On regarde quelle commande on a reçue 
+0774:  MOVF   x6F,W
+0776:  BZ    0792
+0778:  XORLW  01
+077A:  BZ    07A4
+077C:  XORLW  15
+077E:  BZ    07AE
+0780:  XORLW  01
+0782:  BZ    07E2
+0784:  XORLW  1A
+0786:  BZ    0814
+0788:  XORLW  03
+078A:  BZ    0836
+078C:  XORLW  01
+078E:  BZ    0840
+0790:  BRA    0848
+....................             { 
+....................                 case 0 : // Demande de confirmation de sa présence 
+....................                     delay_ms(50); 
+0792:  MOVLW  32
+0794:  MOVWF  x75
+0796:  RCALL  0350
+....................                     SetupTransmission(AdresseSource,1); // Réponse 
+0798:  MOVFF  74,75
+079C:  MOVLW  01
+079E:  MOVWF  x76
+07A0:  RCALL  05C2
+....................                 break; 
+07A2:  BRA    0848
+....................  
+....................                 case 1 : // Confirme la présence d'un autre module après une demande 
+....................                     printf("1"); 
+07A4:  MOVLW  31
+07A6:  BTFSS  F9E.4
+07A8:  BRA    07A6
+07AA:  MOVWF  FAD
+....................                 break; 
+07AC:  BRA    0848
+....................  
+....................                 case 20 : // Allume le triac de puissance 
+....................                     output_high(PIN_E1); 
+07AE:  BCF    F96.1
+07B0:  BSF    F8D.1
+....................                     Flag_Triac = 1; 
+07B2:  BSF    x73.0
+....................                     write_eeprom(2,1); 
+07B4:  MOVF   FF2,W
+07B6:  MOVWF  00
+07B8:  BCF    FF2.7
+07BA:  MOVLW  02
+07BC:  MOVWF  FA9
+07BE:  MOVLW  01
+07C0:  MOVWF  FA8
+07C2:  BCF    FA6.6
+07C4:  BCF    FA6.7
+07C6:  BSF    FA6.2
+07C8:  MOVLB  F
+07CA:  MOVLW  55
+07CC:  MOVWF  FA7
+07CE:  MOVLW  AA
+07D0:  MOVWF  FA7
+07D2:  BSF    FA6.1
+07D4:  BTFSC  FA6.1
+07D6:  BRA    07D4
+07D8:  BCF    FA6.2
+07DA:  MOVF   00,W
+07DC:  IORWF  FF2,F
+....................                 break; 
+07DE:  MOVLB  0
+07E0:  BRA    0848
+....................  
+....................                 case 21 : // Eteint le triac de puissance 
+....................                     output_low(PIN_E1); 
+07E2:  BCF    F96.1
+07E4:  BCF    F8D.1
+....................                     Flag_Triac = 0; 
+07E6:  BCF    x73.0
+....................                     write_eeprom(2,0); 
+07E8:  MOVF   FF2,W
+07EA:  MOVWF  00
+07EC:  BCF    FF2.7
+07EE:  MOVLW  02
+07F0:  MOVWF  FA9
+07F2:  CLRF   FA8
+07F4:  BCF    FA6.6
+07F6:  BCF    FA6.7
+07F8:  BSF    FA6.2
+07FA:  MOVLB  F
+07FC:  MOVLW  55
+07FE:  MOVWF  FA7
+0800:  MOVLW  AA
+0802:  MOVWF  FA7
+0804:  BSF    FA6.1
+0806:  BTFSC  FA6.1
+0808:  BRA    0806
+080A:  BCF    FA6.2
+080C:  MOVF   00,W
+080E:  IORWF  FF2,F
+....................                 break; 
+0810:  MOVLB  0
+0812:  BRA    0848
+....................  
+....................                 case 15 : // Demande de l'état du triac de puissance 
+....................                     delay_ms(50); 
+0814:  MOVLW  32
+0816:  MOVWF  x75
+0818:  RCALL  0350
+....................                     if(Flag_Triac) SetupTransmission(AdresseSource,12); // Réponse si allumé 
+081A:  BTFSS  x73.0
+081C:  BRA    082A
+081E:  MOVFF  74,75
+0822:  MOVLW  0C
+0824:  MOVWF  x76
+0826:  RCALL  05C2
+0828:  BRA    0834
+....................                     else SetupTransmission(AdresseSource,13); // Réponse si éteint 
+082A:  MOVFF  74,75
+082E:  MOVLW  0D
+0830:  MOVWF  x76
+0832:  RCALL  05C2
+....................                 break; 
+0834:  BRA    0848
+....................  
+....................                 case 12 : // Confirme l'état ON du triac d'un autre module après une demande 
+....................                     printf("1"); 
+0836:  MOVLW  31
+0838:  BTFSS  F9E.4
+083A:  BRA    0838
+083C:  MOVWF  FAD
+....................                 break; 
+083E:  BRA    0848
+....................  
+....................                 case 13 : // Confirme l'état OFF du triac d'un autre module après une demande 
+....................                     printf("0"); 
+0840:  MOVLW  30
+0842:  BTFSS  F9E.4
+0844:  BRA    0842
+0846:  MOVWF  FAD
+....................                 break; 
+....................             } 
+....................         } 
+....................         Flag_WtD_P = 0; 
+0848:  BCF    x72.7
+....................     } 
+084A:  GOTO   0A6A (RETURN)
+.................... } 
+....................  
+.................... void WhatToDoPSerial()    // Fonction qui décide de quoi faire en fonction de la commande reçue par liaison série 
+.................... { 
+....................     while(bkbhit) 
+*
+094A:  MOVF   5C,W
+094C:  SUBWF  5B,W
+094E:  BZ    09F8
+....................     { 
+....................         SerialChar[0] = bgetc(); 
+0950:  RCALL  084E
+0952:  MOVFF  01,5D
+....................         if(SerialChar[0] == '$') 
+0956:  MOVF   5D,W
+0958:  SUBLW  24
+095A:  BNZ   09EC
+....................         { 
+....................             SerialChar[1] = bgetc(); 
+095C:  RCALL  084E
+095E:  MOVFF  01,5E
+....................             SerialChar[2] = bgetc(); 
+0962:  RCALL  084E
+0964:  MOVFF  01,5F
+....................             SerialChar[3] = bgetc(); 
+0968:  RCALL  084E
+096A:  MOVFF  01,60
+....................             switch(SerialChar[1]) 
+096E:  MOVF   5E,W
+0970:  XORLW  41
+0972:  BZ    097A
+0974:  XORLW  02
+0976:  BZ    09E0
+0978:  BRA    09EA
+....................             { 
+....................                 case 'A' : // 65 = A = Adresse. On écrit l'adresse dans le registre 1 de l'eeprom interne 
+....................                     write_eeprom(1,SerialChar[3]); 
+097A:  MOVF   FF2,W
+097C:  MOVWF  00
+097E:  BCF    FF2.7
+0980:  MOVLW  01
+0982:  MOVWF  FA9
+0984:  MOVFF  60,FA8
+0988:  BCF    FA6.6
+098A:  BCF    FA6.7
+098C:  BSF    FA6.2
+098E:  MOVLB  F
+0990:  MOVLW  55
+0992:  MOVWF  FA7
+0994:  MOVLW  AA
+0996:  MOVWF  FA7
+0998:  BSF    FA6.1
+099A:  BTFSC  FA6.1
+099C:  BRA    099A
+099E:  BCF    FA6.2
+09A0:  MOVF   00,W
+09A2:  IORWF  FF2,F
+....................                     AdresseModule = read_eeprom(1); 
+09A4:  MOVFF  FF2,74
+09A8:  BCF    FF2.7
+09AA:  MOVLW  01
+09AC:  MOVWF  FA9
+09AE:  BCF    FA6.6
+09B0:  BCF    FA6.7
+09B2:  BSF    FA6.0
+09B4:  MOVF   FA8,W
+09B6:  MOVLB  0
+09B8:  BTFSC  x74.7
+09BA:  BSF    FF2.7
+09BC:  MOVWF  x71
+....................                     printf("AC_OK %d ",AdresseModule); 
+09BE:  MOVLW  D2
+09C0:  MOVWF  FF6
+09C2:  MOVLW  00
+09C4:  MOVWF  FF7
+09C6:  MOVLW  06
+09C8:  MOVWF  x74
+09CA:  BRA    0874
+09CC:  MOVFF  71,74
+09D0:  MOVLW  18
+09D2:  MOVWF  x75
+09D4:  BRA    0896
+09D6:  MOVLW  20
+09D8:  BTFSS  F9E.4
+09DA:  BRA    09D8
+09DC:  MOVWF  FAD
+....................                 break; 
+09DE:  BRA    09EA
+....................                 case 'C' : // 67 = C = Commande. On envoie une commande, C2 est l'adresse où envoyer et C3 la commande. 
+.................... //                    printf("A : %u C : %u ",SerialChar[2],SerialChar[3]); 
+....................                     SetupTransmission(SerialChar[2],SerialChar[3]); 
+09E0:  MOVFF  5F,75
+09E4:  MOVFF  60,76
+09E8:  RCALL  05C2
+....................                 break; 
+....................             } 
+....................         } 
+09EA:  BRA    09F6
+....................         else 
+....................         { 
+....................             while(bkbhit) 
+09EC:  MOVF   5C,W
+09EE:  SUBWF  5B,W
+09F0:  BZ    09F6
+....................             { 
+....................             bgetc();    // vidage buffer si non OK 
+09F2:  RCALL  084E
+09F4:  BRA    09EC
+....................             } 
+....................         } 
+09F6:  BRA    094A
+....................     }     
+09F8:  GOTO   0A6C (RETURN)
+.................... } 
+....................  
+.................... void main()  ////////////////////////////////////////////////////////////////////////////////////// MAIN /////////////////////////////////////////////////////////////////////////////////////////////////////// 
+09FC:  CLRF   FF8
+09FE:  BCF    FD0.7
+0A00:  BSF    07.7
+0A02:  BCF    FB8.3
+0A04:  MOVLW  4D
+0A06:  MOVWF  FAF
+0A08:  MOVLW  A6
+0A0A:  MOVWF  FAC
+0A0C:  MOVLW  90
+0A0E:  MOVWF  FAB
+0A10:  CLRF   1B
+0A12:  CLRF   1A
+0A14:  CLRF   44
+0A16:  CLRF   45
+0A18:  MOVLW  10
+0A1A:  MOVWF  46
+0A1C:  CLRF   47
+0A1E:  CLRF   48
+0A20:  MOVWF  49
+0A22:  CLRF   4A
+0A24:  CLRF   5B
+0A26:  CLRF   5C
+0A28:  MOVLW  01
+0A2A:  MOVWF  x62
+0A2C:  MOVWF  x68
+0A2E:  CLRF   x69
+0A30:  CLRF   x6A
+0A32:  MOVWF  x70
+0A34:  MOVLW  E4
+0A36:  MOVWF  x71
+0A38:  BCF    x72.0
+0A3A:  BCF    x72.1
+0A3C:  BCF    x72.2
+0A3E:  BCF    x72.3
+0A40:  BCF    x72.4
+0A42:  BCF    x72.5
+0A44:  BCF    x72.6
+0A46:  BCF    x72.7
+0A48:  BCF    x73.0
+0A4A:  MOVF   FC1,W
+0A4C:  ANDLW  C0
+0A4E:  IORLW  0F
+0A50:  MOVWF  FC1
+0A52:  MOVLW  07
+0A54:  MOVWF  FB4
+.................... { 
+....................     initialisation(); 
+0A56:  BRA    02AA
+....................     delay_ms(500);     
+0A58:  MOVLW  02
+0A5A:  MOVWF  x74
+0A5C:  MOVLW  FA
+0A5E:  MOVWF  x75
+0A60:  RCALL  0350
+0A62:  DECFSZ x74,F
+0A64:  BRA    0A5C
+....................     while(TRUE) 
+....................     { 
+....................         Reception(); 
+0A66:  BRA    0378
+....................  
+....................         WhatToDoPowerline(); 
+0A68:  BRA    0762
+....................  
+....................         WhatToDoPSerial(); 
+0A6A:  BRA    094A
+....................  
+....................         if((N_Alternance == 10) && FlagBouton) 
+0A6C:  MOVF   x62,W
+0A6E:  SUBLW  0A
+0A70:  BNZ   0A80
+0A72:  BTFSS  x72.0
+0A74:  BRA    0A80
+....................         { 
+....................             SetupTransmission(27,228); // 228 = 11 10 01 00  et 27 = 00 01 10 11 
+0A76:  MOVLW  1B
+0A78:  MOVWF  x75
+0A7A:  MOVLW  E4
+0A7C:  MOVWF  x76
+0A7E:  RCALL  05C2
+....................         } 
+....................  
+....................         if(input_state(PIN_B6) == 0 || input_state(PIN_B4) == 0) 
+0A80:  BTFSS  F81.6
+0A82:  BRA    0A88
+0A84:  BTFSC  F81.4
+0A86:  BRA    0A90
+....................         { 
+....................             FlagBouton = !FlagBouton; 
+0A88:  BTG    x72.0
+....................             delay_ms(250); 
+0A8A:  MOVLW  FA
+0A8C:  MOVWF  x75
+0A8E:  RCALL  0350
+....................         } 
+0A90:  BRA    0A66
+....................  
+....................          
+....................  
+....................     } 
+.................... }   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #int_CCP1 
+.................... void CCP1_isr() // Interruption sur passage par zéro 
+0A92:  SLEEP 
+.................... { 
+....................     if(get_timer0() > 59000) 
+*
+013C:  MOVF   FD6,W
+013E:  MOVFF  FD7,03
+0142:  MOVWF  x7D
+0144:  MOVF   FD7,W
+0146:  MOVWF  x7E
+0148:  SUBLW  E5
+014A:  BC    0198
+014C:  XORLW  FF
+014E:  BNZ   0156
+0150:  MOVF   x7D,W
+0152:  SUBLW  78
+0154:  BC    0198
+....................     { 
+....................         set_timer0(0); // Remise à 0 du timer0 
+0156:  CLRF   FD7
+0158:  CLRF   FD6
+....................         Flag_Positif = !Flag_Positif; 
+015A:  BTG    x72.6
+....................         if(Flag_Positif) 
+015C:  BTFSS  x72.6
+015E:  BRA    0172
+....................         { 
+....................             output_high(PIN_D0); 
+0160:  BCF    F95.0
+0162:  BSF    F8C.0
+....................             setup_ccp1(CCP_CAPTURE_FE); // On passe l'interruption sur flanc descendant 
+0164:  BSF    F94.2
+0166:  CLRF   FBD
+0168:  MOVLW  04
+016A:  MOVWF  FBD
+016C:  CLRF   FB7
+016E:  CLRF   FB6
+....................         } 
+0170:  BRA    0182
+....................         else 
+....................         { 
+....................             output_low(PIN_D0); 
+0172:  BCF    F95.0
+0174:  BCF    F8C.0
+....................             setup_ccp1(CCP_CAPTURE_RE); // On passe l'interruption sur flanc montant 
+0176:  BSF    F94.2
+0178:  CLRF   FBD
+017A:  MOVLW  05
+017C:  MOVWF  FBD
+017E:  CLRF   FB7
+0180:  CLRF   FB6
+....................         } 
+....................         N_Alternance++; 
+0182:  INCF   x62,F
+....................         N_AlternanceRx++; 
+0184:  INCF   47,F
+....................         N_AlternanceTx++; 
+0186:  INCF   45,F
+....................         if(N_Alternance == 51) N_Alternance = 1; 
+0188:  MOVF   x62,W
+018A:  SUBLW  33
+018C:  BNZ   0192
+018E:  MOVLW  01
+0190:  MOVWF  x62
+....................         Transmission(); // Appel de la fonction de transmission 
+0192:  BRA    00DC
+....................         FlagRxAlternance = 0; // Comme on démarre une nouvelle alternance on peut recommencer à regarder pour une réception 
+0194:  BCF    x72.2
+....................         clear_interrupt(INT_CCP1); // Clear du flag d'interruption 
+0196:  BCF    F9E.2
+....................     } 
+.................... } 
+....................  
+0198:  BCF    F9E.2
+019A:  GOTO   0084
+.................... #int_COMP 
+.................... void COMP_isr() // Interruption sur comparateur pour la réception 
+.................... { 
+....................     if(!FlagRx && !C1OUT) 
+019E:  BTFSC  x72.1
+01A0:  BRA    01B0
+01A2:  BTFSC  FB4.6
+01A4:  BRA    01B0
+....................     { 
+....................     Timer0_Rx = get_timer0(); 
+01A6:  MOVF   FD6,W
+01A8:  MOVWF  1A
+01AA:  MOVFF  FD7,1B
+....................     FlagRx = 1; 
+01AE:  BSF    x72.1
+....................     } 
+....................     clear_interrupt(INT_COMP); 
+01B0:  BCF    FA1.6
+.................... } 
+....................  
+01B2:  BCF    FA1.6
+01B4:  GOTO   0084
+.................... #int_TIMER1 // Interruption sur timer pour l'envoi des impulsions 
+.................... void TIMER1_isr() 
+.................... { 
+....................     if(TxOn || StartTx) 
+01B8:  BTFSC  x72.4
+01BA:  BRA    01C0
+01BC:  BTFSS  x72.3
+01BE:  BRA    01DA
+....................     { 
+....................         output_high(PIN_A5); 
+01C0:  BCF    F92.5
+01C2:  BSF    F89.5
+....................         delay_us(100); 
+01C4:  MOVLW  C7
+01C6:  MOVWF  00
+01C8:  DECFSZ 00,F
+01CA:  BRA    01C8
+01CC:  BRA    01CE
+....................         output_low(PIN_A5); 
+01CE:  BCF    F92.5
+01D0:  BCF    F89.5
+....................         if(StartTx) 
+01D2:  BTFSS  x72.3
+01D4:  BRA    01DA
+....................         { 
+....................             StartTx = 0; 
+01D6:  BCF    x72.3
+....................             TxOn = 1; 
+01D8:  BSF    x72.4
+....................         } 
+....................     } 
+....................     clear_interrupt(INT_TIMER1); 
+01DA:  BCF    F9E.0
+.................... } 
+....................  
+01DC:  BCF    F9E.0
+01DE:  GOTO   0084
+.................... #int_RDA // Interruption sur port série 
+.................... void serial_isr() 
+.................... { 
+....................     int t; 
+....................     buffer[next_in] = getc();				// remplissage du buffer 
+01E2:  CLRF   03
+01E4:  MOVF   5B,W
+01E6:  ADDLW  4B
+01E8:  MOVWF  FE9
+01EA:  MOVLW  00
+01EC:  ADDWFC 03,W
+01EE:  MOVWF  FEA
+01F0:  BTFSS  F9E.5
+01F2:  BRA    01F0
+01F4:  MOVFF  FAE,FEF
+....................     t = next_in; 
+01F8:  MOVFF  5B,7D
+....................     next_in = (next_in + 1) % BUFFER_SIZE; 
+01FC:  MOVLW  01
+01FE:  ADDWF  5B,W
+0200:  ANDLW  0F
+0202:  MOVWF  5B
+....................     if(next_in == next_out) 
+0204:  MOVF   5C,W
+0206:  SUBWF  5B,W
+0208:  BNZ   020E
+....................     next_in = t; 
+020A:  MOVFF  7D,5B
+020E:  BCF    F9E.5
+0210:  GOTO   0084
+.................... } 
+
+Configuration Fuses:
+   Word  1: CC3F   PLL12 CPUDIV4 USBDIV HS FCMEN IESO
+   Word  2: 1E3E   PUT BROWNOUT BORV21 VREGEN NOWDT WDT32768
+   Word  3: 8700   CCP2C1 PBADEN LPT1OSC MCLR
+   Word  4: 00A1   STVREN NOLVP ICSP2 NOXINST NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

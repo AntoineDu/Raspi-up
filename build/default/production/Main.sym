@@ -1,0 +1,179 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     lcd_line
+01A-01B Timer0_Rx
+01C-043 TimerTx
+044     DeuxBitsTx
+045     N_AlternanceTx
+046     N_AlternanceTxMax
+047     N_AlternanceRx
+048     N_AlternanceRxPrec
+049     N_AlternanceRxMax
+04A     VarBoucleTx
+04B-05A buffer
+05B     next_in
+05C     next_out
+05D-061 SerialChar
+062     N_Alternance
+063-067 MessageTx
+068     N_MessageTx
+069     DeuxBitsRx
+06A     N_DeuxBitsRx
+06B-06F MessageRx
+070     N_MessageRx
+071     AdresseModule
+072.0   FlagBouton
+072.1   FlagRx
+072.2   FlagRxAlternance
+072.3   StartTx
+072.4   TxOn
+072.5   RxOn
+072.6   Flag_Positif
+072.7   Flag_WtD_P
+073.0   Flag_Triac
+074     lcd_gotoxy.x
+074     @PRINTF_U_19200_31766_31767.P1
+074     bgetc.c
+074     @PSTRINGCN_19200_31766_31767.P1
+074     @PRINTF_D_19200_31766_31767.P2
+074     WhatToDoPowerline.AdresseSource
+074     cursor.c
+074     initialisation.@SCRATCH1
+074     Reception.@SCRATCH1
+074     WhatToDoPSerial.@SCRATCH1
+074     MAIN.@SCRATCH1
+075     SetupTransmission.AdresseRecepteur
+075     @PRINTF_U_19200_31766_31767.P1
+075     @PRINTF_D_19200_31766_31767.P2
+075     lcd_gotoxy.y
+075     @delay_ms1.P1
+075     bgetc.@SCRATCH1
+075     Reception.@SCRATCH2
+075     @PSTRINGCN_19200_31766_31767.@SCRATCH1
+075     MAIN.@SCRATCH2
+076     lcd_gotoxy.address
+076     SetupTransmission.Commande
+076     Reception.@SCRATCH3
+076     @PSTRINGCN_19200_31766_31767.@SCRATCH2
+076     @PRINTF_D_19200_31766_31767.@SCRATCH1
+077     SetupTransmission.@SCRATCH1
+077     @PRINTF_D_19200_31766_31767.@SCRATCH2
+078     SetupTransmission.@SCRATCH2
+078     @PRINTF_D_19200_31766_31767.@SCRATCH3
+079     @PRINTF_D_19200_31766_31767.@SCRATCH4
+07A     @DIV88.P1
+07B     @DIV88.P1
+07C     @DIV88.@SCRATCH1
+07D     serial_isr.t
+07D     Transmission.@SCRATCH1
+07D     CCP1_isr.@SCRATCH1
+07E     Transmission.@SCRATCH2
+07E     CCP1_isr.@SCRATCH2
+07E     serial_isr.@SCRATCH1
+07F     serial_isr.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF1     INTCON2
+FF1.7   RBPU
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000D2  @const725.call
+0000DC  Transmission
+00013C  CCP1_isr
+00019E  COMP_isr
+0001B8  TIMER1_isr
+0001E2  serial_isr
+000214  @DIV88
+00023C  @PRINTF_U_19200_31766_31767
+0002AA  initialisation
+000350  @delay_ms1
+000378  Reception
+0005A0  @goto7956
+0005C2  SetupTransmission
+000740  @goto7839
+000762  WhatToDoPowerline
+00084E  bgetc
+000874  @PSTRINGCN_19200_31766_31767
+000896  @PRINTF_D_19200_31766_31767
+00094A  WhatToDoPSerial
+0009FC  @cinit1
+0009FC  MAIN
+000A56  @cinit2
+
+Project Directory:
+    C:\Users\Hugo\Desktop\Programmes\X - Stage\Detection.X\
+
+Project Files:
+    Main.c                                                  [11-avr.-16 14:24  CRC=A6A482CB]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h [22-oct.-15 11:31  CRC=A89B282E]
+    ..\include\LCD420_S3.c                                  [24-juil.-14 12:01  CRC=03A88C45]
+
+Source signature=5690C383
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=A18D
+
+Units:
+    Main (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+    Predefined symbols:
+       #define __18F4550 1
+
+Output Files:
+    XREF file:   build\default\production\Main.xsym
+    Errors:      build\default\production\Main.err
+    Ext Symbols: build\default\production\Main.esym
+    INHX32:      build\default\production\Main.hex
+    Symbols:     build\default\production\Main.sym
+    List:        build\default\production\Main.lst
+    Debug/COFF:  build\default\production\Main.cof
+    Project:     Main.ccspjt
+    Call Tree:   build\default\production\Main.tre
+    Statistics:  build\default\production\Main.STA
