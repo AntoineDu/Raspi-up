@@ -1,4 +1,36 @@
-C:\Users\Hugo\Desktop\Programmes\Progra\Detection.X\Main.c:0:0:  Info#300  More info:   *3* I/O error 32
-C:\Users\Hugo\Desktop\Programmes\Progra\Detection.X\Main.c:0:0:  Error#44  Internal Error - Contact CCS  OUTPUT FILE
-      1 Errors,  0 Warnings.
-Build Failed.
+>>> Warning 202 "Code final.c" Line 20(5,14): Variable never used:   PosCharge
+>>> Warning 202 "Code final.c" Line 20(23,30): Variable never used:   PosZero
+>>> Warning 202 "Code final.c" Line 20(40,45): Variable never used:   PosUn
+>>> Warning 202 "Code final.c" Line 20(55,62): Variable never used:   PosDeux
+>>> Warning 202 "Code final.c" Line 20(72,80): Variable never used:   PosTrois
+>>> Warning 202 "Code final.c" Line 20(90,100): Variable never used:   EcartRxInf
+>>> Warning 202 "Code final.c" Line 20(108,118): Variable never used:   EcartRxSup
+>>> Warning 202 "Code final.c" Line 24(160,169): Variable never used:   Timer0_Rx
+>>> Warning 202 "Code final.c" Line 24(175,182): Variable never used:   TimerTx
+>>> Warning 202 "Code final.c" Line 26(192,202): Variable never used:   DeuxBitsTx
+>>> Warning 202 "Code final.c" Line 26(208,222): Variable never used:   N_AlternanceTx
+>>> Warning 202 "Code final.c" Line 26(228,245): Variable never used:   N_AlternanceTxMax
+>>> Warning 202 "Code final.c" Line 26(252,255): Variable never used:   N_AlternanceRx
+>>> Warning 202 "Code final.c" Line 26(16,34): Variable never used:   N_AlternanceRxPrec
+>>> Warning 202 "Code final.c" Line 26(40,57): Variable never used:   N_AlternanceRxMax
+>>> Warning 202 "Code final.c" Line 26(64,75): Variable never used:   VarBoucleTx
+>>> Warning 202 "Code final.c" Line 28(85,91): Variable never used:   buffer
+>>> Warning 202 "Code final.c" Line 28(106,113): Variable never used:   next_in
+>>> Warning 202 "Code final.c" Line 28(119,127): Variable never used:   next_out
+>>> Warning 202 "Code final.c" Line 28(133,143): Variable never used:   SerialChar
+>>> Warning 202 "Code final.c" Line 28(166,175): Variable never used:   MessageTx
+>>> Warning 202 "Code final.c" Line 28(180,191): Variable never used:   N_MessageTx
+>>> Warning 202 "Code final.c" Line 28(197,207): Variable never used:   DeuxBitsRx
+>>> Warning 202 "Code final.c" Line 28(213,225): Variable never used:   N_DeuxBitsRx
+>>> Warning 202 "Code final.c" Line 28(231,240): Variable never used:   MessageRx
+>>> Warning 202 "Code final.c" Line 28(245,255): Variable never used:   N_MessageRx
+>>> Warning 202 "Code final.c" Line 30(47,53): Variable never used:   FlagRx
+>>> Warning 202 "Code final.c" Line 30(59,75): Variable never used:   FlagRxAlternance
+>>> Warning 202 "Code final.c" Line 30(81,88): Variable never used:   StartTx
+>>> Warning 202 "Code final.c" Line 30(94,98): Variable never used:   TxOn
+>>> Warning 202 "Code final.c" Line 30(104,108): Variable never used:   RxOn
+>>> Warning 202 "Code final.c" Line 30(114,126): Variable never used:   Flag_Positif
+>>> Warning 202 "Code final.c" Line 30(132,142): Variable never used:   Flag_WtD_P
+      Memory usage:   ROM=3%      RAM=5% - 5%
+      0 Errors,  33 Warnings.
+Build Successful.

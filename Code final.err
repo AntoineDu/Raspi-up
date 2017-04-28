@@ -1,0 +1,20 @@
+--- Info 300 "Code final.c" Line 14(1,1): More info:   PWM Resolution: 9,23 bits
+>>> Warning 202 "Code final.c" Line 28(112,120): Variable never used:   PWM_Duty
+>>> Warning 202 "Code final.c" Line 34(246,255): Variable never used:   FlagBouton
+>>> Warning 202 "Code final.c" Line 34(141,147): Variable never used:   Tx_Ack
+>>> Warning 202 "Code final.c" Line 34(153,161): Variable never used:   Wait_Ack
+>>> Warning 202 "Code final.c" Line 36(7,17): Variable never used:   NbrImpEXT2
+>>> Warning 202 "Code final.c" Line 40(6,14): Variable never used:   AdresseR
+>>> Warning 202 "Code final.c" Line 40(19,24): Variable never used:   EtatR
+>>> Warning 202 "Code final.c" Line 41(33,45): Variable never used:   impulsionTOT
+>>> Warning 202 "Code final.c" Line 42(6,7): Variable never used:   x
+>>> Warning 202 "Code final.c" Line 43(6,13): Variable never used:   tableau
+>>> Warning 202 "Code final.c" Line 44(6,13): Variable never used:   synchro
+>>> Warning 202 "Code final.c" Line 45(6,15): Variable never used:   impulsion
+>>> Warning 202 "Code final.c" Line 46(6,17): Variable never used:   tableautest
+>>> Warning 202 "Code final.c" Line 47(98,111): Variable never used:   Valeur_Timer0
+>>> Warning 202 "Code final.c" Line 48(6,19): Variable never used:   synchro_timer
+>>> Warning 202 "Code final.c" Line 754(6,7): Variable never used:   a
+      Memory usage:   ROM=14%      RAM=13% - 14%
+      0 Errors,  16 Warnings.
+Build Successful.

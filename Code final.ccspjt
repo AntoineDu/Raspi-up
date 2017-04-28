@@ -1,0 +1,14 @@
+[PROJECT]
+Target=Code final.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.051
+Compiler=PCH
+[Target Data]
+FileList=Code final.c
+[Code final.c]
+Type=4
+[mru-list]
+1=Code final.c
+[Units]
+Count=1
+1=Code final (main)

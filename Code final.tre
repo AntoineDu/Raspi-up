@@ -1,0 +1,75 @@
+ÀÄCode final
+   ÃÄMAIN  0/434  Ram=3
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄinitialisation  0/236  Ram=1
+   ³  ³  ÀÄ@PRINTF_U_19200_31766_31767  0/128  Ram=2
+   ³  ³     ÃÄ@DIV88  0/44  Ram=3
+   ³  ³     ÀÄ@DIV88  0/44  Ram=3
+   ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ÃÄReception  0/584  Ram=3
+   ³  ³  ÀÄ@goto11213  0/34  Ram=0
+   ³  ÃÄWhatToDoPowerline  0/858  Ram=1
+   ³  ³  ÃÄ@goto11310  0/106  Ram=0
+   ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ÃÄSetupTransmission  0/382  Ram=4
+   ³  ³  ³  ÀÄ@goto11061  0/34  Ram=0
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ÃÄEnvoiWireless  0/212  Ram=6
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ³  ³  ÀÄ@delay_us1  0/34  Ram=1
+   ³  ³  ³  ÃÄEnvoiWireless  0/212  Ram=6
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄEnvoiWireless  0/212  Ram=6
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
+   ³  ³  ÃÄSetupTransmission  0/382  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄSetupTransmission  0/382  Ram=4
+   ³  ³     ÀÄ*
+   ³  ÃÄWhatToDoPSerial  0/190  Ram=1
+   ³  ³  ÃÄbgetc  0/42  Ram=2
+   ³  ³  ÃÄbgetc  0/42  Ram=2
+   ³  ³  ÃÄbgetc  0/42  Ram=2
+   ³  ³  ÃÄbgetc  0/42  Ram=2
+   ³  ³  ÃÄ@PSTRINGCN_19200_31766_31767  0/44  Ram=3
+   ³  ³  ÃÄ@PRINTF_D_19200_31766_31767  0/196  Ram=6
+   ³  ³  ³  ÃÄ@DIV88  0/44  Ram=3
+   ³  ³  ³  ÀÄ@DIV88  0/44  Ram=3
+   ³  ³  ÃÄSetupTransmission  0/382  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄbgetc  0/42  Ram=2
+   ³  ÀÄ@const648  0/34  Ram=0
+   ÃÄCCP1_isr  0/118  Ram=2
+   ³  ÀÄTransmission  0/96  Ram=2
+   ÃÄCOMP_isr  0/34  Ram=0
+   ÃÄTIMER1_isr  0/42  Ram=0
+   ÀÄserial_isr  0/50  Ram=3

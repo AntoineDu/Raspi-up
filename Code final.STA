@@ -1,0 +1,70 @@
+
+ROM used:   4330/31936 (14%)
+            4330/31936 (14%) including unused fragments
+
+            2.4 Average locations per line
+            12.6 Average locations per statement
+
+RAM used:   261/2036 (13%) at main() level
+            277/2036 (14%) worst case
+
+Stack used: 4 worst case (3 in main + 1 for interrupts)
+Stack size: 30
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  953   345 100  Code final.c
+  841     0   0  ..\..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+----- -----
+ 1794   345 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     42   0    1             @delay_ms1
+0     34   0    1             @delay_us1
+0     34   0    0             @const648
+0    236   3    1    730  3.3  initialisation
+0     44   1    3             @DIV88
+0    128   1    2             @PRINTF_U_19200_31766_31767
+0     42   0    2    149  4.7  bgetc
+0    382   4    4   1628 10.9  SetupTransmission
+0     34   0    0             @goto11061
+0     96   1    2    447  5.7  Transmission
+0    584   7    3   2424  9.9  Reception
+0     34   0    0             @goto11213
+0    858  10    1   3391  6.4  WhatToDoPowerline
+0    106   1    0             @goto11310
+0    190   2    1    595  7.0  WhatToDoPSerial
+0     10   0    0             @const742
+0     44   1    3             @PSTRINGCN_19200_31766_31767
+0    196   2    6             @PRINTF_D_19200_31766_31767
+0    140   2    8    547  4.7  SetupEnvoiWireless
+0    212   2    6    758  6.6  EnvoiWireless
+0    434   5    3    313  4.2  MAIN
+0    118   1    2    410  4.7  CCP1_isr
+0     34   0    0    136  3.0  COMP_isr
+0     42   0    0    163  2.6  TIMER1_isr
+0     50   1    3    160  4.0  serial_isr
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               14
+    Statements              345
+    Comments                619
+    Volume (V)              17843
+    Difficulty (D)          77.9
+    Effort to implement (E) 1390678
+    Time to implement (T)   21 hours, 28 minutes
+    Est Delivered Bugs (B)  4
+    Cyclomatic Complexity   76
+    Maintainability (MI)    42
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000D0   202  0  
+000D2-07CBE  4124  27602  
+
+
+
