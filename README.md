@@ -2,11 +2,12 @@
 
 La Raspi-UP est un module domotique pensé et fabriqué au sein du SEMi (Service d'Electronique et de Microélectronique).
 
-Il a été développé dans le but de contrôler une prise éléctrique, dans la maisons, où un module y serait branché.
+Il a été développé dans le but de contrôler une prise éléctrique, dans la maison, où un module y serait branché.
 
 Les modules utilisent la communication par courant porteur pour communiquer entre eux, c'est-à-dire que les données sont transférées directement sur le réseau électrique de la maison.
 Le protocole de communication par courant porteur est l'UPB (Universal Powerline Bus). 
 Ce protocole est basé sur l'envoi d'impulsion sur le réseau à un moment bien précis sur chaque alternance de la sinusoïde.
+
 Son avantage est qu'il permet à chaque module d'être émetteur ou récepteur, il est libre de droit d'utilisation et son coût de fabrication est relativement correct.
 
 Chaque module est capable d'allumer/éteindre une charge branchée dessus, ainsi que d'en faire varier l'intensité.
