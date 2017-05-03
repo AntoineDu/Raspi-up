@@ -1,8 +1,13 @@
 //************************************************************************************
 //** PIN A5 TRIAC impulsion
 //** PIN E1 TRIAC puissance
-//** PIN D0 LED 0
-//** PIN D1 LED 1
+//** PIN D0 LED 1
+//** PIN D1 LED 2
+//** PIN C6 Tx
+//** PIN C7 Rx
+//** PIN B2 RECEPTEUR RF
+//** PIN D7 EMETTEUR RF
+//** PIN C1 PWM
 //************************************************************************************
 
 #include <18F4550.h>

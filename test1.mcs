@@ -15,6 +15,9 @@ ToolArgsString=
 TraceCmdString=
 DebugOptions=
 [File001]
+Location=C:\Users\antoine\Desktop\HeH_Hugo Stival_Raspi-Up\Raspi-UP (Projet MPLAB)\Code final.o
+Folder=Intermediary
+[File002]
 Location=Code final.ERR
 Folder=Output
 DeviceName=
@@ -27,7 +30,7 @@ SuiteArgsString=
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
-[File002]
+[File003]
 Location=C:\Users\antoine\Desktop\Stage\programme\Code final.HEX
 Folder=Output
 DeviceName=
@@ -40,7 +43,7 @@ SuiteArgsString=
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
-[File003]
+[File004]
 Location=C:\Users\antoine\Desktop\Stage\programme\Code final.LST
 Folder=Output
 DeviceName=
@@ -53,7 +56,7 @@ SuiteArgsString=
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
-[File004]
+[File005]
 Location=C:\Users\antoine\Desktop\Stage\programme\Code final.COF
 Folder=Output
 DeviceName=
@@ -66,5 +69,14 @@ SuiteArgsString=
 ToolArgsString=
 TraceCmdString=
 DebugOptions=
+[File006]
+Location=C:\Users\antoine\Desktop\HeH_Hugo Stival_Raspi-Up\Raspi-UP (Projet MPLAB)\Code final.HEX
+Folder=Output
+[File007]
+Location=C:\Users\antoine\Desktop\HeH_Hugo Stival_Raspi-Up\Raspi-UP (Projet MPLAB)\Code final.LST
+Folder=Output
+[File008]
+Location=C:\Users\antoine\Desktop\HeH_Hugo Stival_Raspi-Up\Raspi-UP (Projet MPLAB)\Code final.COF
+Folder=Output
 [TOOL_LOC_STAMPS]
 tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files (x86)\PICC\Ccsc.exe

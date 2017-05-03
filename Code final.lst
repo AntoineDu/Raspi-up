@@ -1,6 +1,6 @@
-CCS PCH C Compiler, Version 5.051, 54872               27-avr.-17 10:52
+CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 
-               Filename:   C:\Users\antoine\Desktop\Stage\programme\Code final.lst
+               Filename:   C:\Users\antoine\Desktop\HeH_Hugo Stival_Raspi-Up\Raspi-UP (Projet MPLAB)\Code final.lst
 
                ROM used:   4330 bytes (14%)
                            Largest free fragment is 27602
@@ -72,8 +72,13 @@ CCS PCH C Compiler, Version 5.051, 54872               27-avr.-17 10:52
 .................... //************************************************************************************ 
 .................... //** PIN A5 TRIAC impulsion 
 .................... //** PIN E1 TRIAC puissance 
-.................... //** PIN D0 LED 0 
-.................... //** PIN D1 LED 1 
+.................... //** PIN D0 LED 1 
+.................... //** PIN D1 LED 2 
+.................... //** PIN C6 Tx 
+.................... //** PIN C7 Rx 
+.................... //** PIN B2 RECEPTEUR RF 
+.................... //** PIN D7 EMETTEUR RF 
+.................... //** PIN C1 PWM 
 .................... //************************************************************************************ 
 ....................  
 .................... #include <18F4550.h> 

@@ -7,12 +7,12 @@
    ³  ³     ÀÄ@DIV88  0/44  Ram=3
    ³  ÃÄ@delay_ms1  0/42  Ram=1
    ³  ÃÄReception  0/584  Ram=3
-   ³  ³  ÀÄ@goto11213  0/34  Ram=0
+   ³  ³  ÀÄ@goto15128  0/34  Ram=0
    ³  ÃÄWhatToDoPowerline  0/858  Ram=1
-   ³  ³  ÃÄ@goto11310  0/106  Ram=0
+   ³  ³  ÃÄ@goto15227  0/106  Ram=0
    ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
    ³  ³  ÃÄSetupTransmission  0/382  Ram=4
-   ³  ³  ³  ÀÄ@goto11061  0/34  Ram=0
+   ³  ³  ³  ÀÄ@goto14972  0/34  Ram=0
    ³  ³  ÃÄSetupEnvoiWireless  0/140  Ram=8
    ³  ³  ³  ÃÄ@delay_us1  0/34  Ram=1
    ³  ³  ³  ÃÄ@delay_ms1  0/42  Ram=1
