@@ -310,7 +310,7 @@ void Reception()    // Analyse les impulsions détectées par le comparateur pour 
     }
 }
 /*
-void Acknowledge()
+void Acknowledge()		//Acquittement
 {	
 	if(Wait_Ack)
 	{
@@ -367,87 +367,46 @@ void WhatToDoPowerline()    // Fonction qui décide de quoi faire en fonction de 
 					Charge_Valeur = 0;
                 break;
 
- /*               case 22 :
-					//output_low(PIN_E1);
-                    Flag_Triac = 1;
-                    write_eeprom(2,1);                    
-                    Flag_TriacVar = 1;
-					Charge_Valeur += 1;
-                    if(Charge_Valeur >= 8) 
-					{
-						Charge_Valeur = 8;
-						Flag_TriacVar = 0;
-						output_high(PIN_E1);
-					}                                               
-                break;
-                case 23 :
-					if(Charge_valeur == 8)output_low(PIN_E1);
-                    Flag_Triac = 1;
-                    write_eeprom(2,1);                    
-                    Flag_TriacVar = 1;
-					Charge_Valeur -= 1; 
-                    if(Charge_Valeur <= 0)
-					{	
-						output_low(PIN_E1);
-						Flag_Triac = 0;
-						Flag_TriacVar = 0;
-						Charge_Valeur = 0;
-						write_eeprom(2,0);                
-					}                
-                break;*/
-
-                case 22 :
+                case 22 : // Active le variateur à 20%
                     Flag_Triac = 1;
                     write_eeprom(2,1);                    
                     Flag_TriacVar = 1;
 					Charge_Valeur = 0;                                  
                 break;
-                case 23 :
+                case 23 : // Active le variateur à 35%
                     Flag_Triac = 1;
                     write_eeprom(2,1);                    
                     Flag_TriacVar = 1;
 					Charge_Valeur = 1;                                  
                 break;
-                case 24 :
+                case 24 : // Active le variateur à 50%
                     Flag_Triac = 1;
                     write_eeprom(2,1);                    
                     Flag_TriacVar = 1;
 					Charge_Valeur = 2;                                  
                 break;
 
-                case 25 :
+                case 25 : // Active le variateur à 60%
                     Flag_Triac = 1;
                     write_eeprom(2,1);                    
                     Flag_TriacVar = 1;
 					Charge_Valeur = 3;                                  
                 break;
 
-                case 26 :
+                case 26 : // Active le variateur à 75%
                     Flag_Triac = 1;
                     write_eeprom(2,1);                    
                     Flag_TriacVar = 1;
 					Charge_Valeur = 4;                               
                 break;
 
-                case 27 :
+                case 27 : // Active le variateur à 90%
                     Flag_Triac = 1;
                     write_eeprom(2,1);                    
                     Flag_TriacVar = 1;
 					Charge_Valeur = 5;                                 
                 break;
-         /*       case 28 :
-                    Flag_Triac = 1;
-                    write_eeprom(2,1);                    
-                    Flag_TriacVar = 1;
-					Charge_Valeur = 6;                                  
-                break;
-                case 29 :
-                    Flag_Triac = 1;
-                    write_eeprom(2,1);                    
-                    Flag_TriacVar = 1;
-					Charge_Valeur = 7;                                  
-                break;*/
-
+// Les différentes commandes et adresses des interrupteurs Flamingo
 				case 30 :
 					SetupEnvoiWireless(On, 4, AdresseA,4);
 				break;
@@ -569,7 +528,7 @@ void WhatToDoPSerial()    // Fonction qui décide de quoi faire en fonction de la
     }    
 }
 /*
-void ReceptionRF()
+void ReceptionRF()		// Reception 433 MHz 
 {	
 	disable_interrupts(INT_EXT2);	
 	int8 OkOn = 0, OkOff = 0, OkOnAll = 0, OkOffAll = 0;

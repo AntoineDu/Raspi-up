@@ -1,4 +1,4 @@
-CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
+CCS PCH C Compiler, Version 5.051, 54872               05-mai-17 11:00
 
                Filename:   C:\Users\antoine\Desktop\HeH_Hugo Stival_Raspi-Up\Raspi-UP (Projet MPLAB)\Code final.lst
 
@@ -1376,7 +1376,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 0658:  GOTO   1094 (RETURN)
 .................... } 
 .................... /* 
-.................... void Acknowledge() 
+.................... void Acknowledge()		//Acquittement 
 .................... {	 
 .................... 	if(Wait_Ack) 
 .................... 	{ 
@@ -1523,36 +1523,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 0A54:  MOVLB  0
 0A56:  BRA    0CF4
 ....................  
-....................  /*               case 22 : 
-.................... 					//output_low(PIN_E1); 
-....................                     Flag_Triac = 1; 
-....................                     write_eeprom(2,1);                     
-....................                     Flag_TriacVar = 1; 
-.................... 					Charge_Valeur += 1; 
-....................                     if(Charge_Valeur >= 8)  
-.................... 					{ 
-.................... 						Charge_Valeur = 8; 
-.................... 						Flag_TriacVar = 0; 
-.................... 						output_high(PIN_E1); 
-.................... 					}                                                
-....................                 break; 
-....................                 case 23 : 
-.................... 					if(Charge_valeur == 8)output_low(PIN_E1); 
-....................                     Flag_Triac = 1; 
-....................                     write_eeprom(2,1);                     
-....................                     Flag_TriacVar = 1; 
-.................... 					Charge_Valeur -= 1;  
-....................                     if(Charge_Valeur <= 0) 
-.................... 					{	 
-.................... 						output_low(PIN_E1); 
-.................... 						Flag_Triac = 0; 
-.................... 						Flag_TriacVar = 0; 
-.................... 						Charge_Valeur = 0; 
-.................... 						write_eeprom(2,0);                 
-.................... 					}                 
-....................                 break;*/ 
-....................  
-....................                 case 22 : 
+....................                 case 22 : // Active le variateur à 20% 
 ....................                     Flag_Triac = 1; 
 0A58:  BSF    x75.1
 ....................                     write_eeprom(2,1);                     
@@ -1584,7 +1555,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 0A88:  CLRF   4C
 ....................                 break; 
 0A8A:  BRA    0CF4
-....................                 case 23 : 
+....................                 case 23 : // Active le variateur à 35% 
 ....................                     Flag_Triac = 1; 
 0A8C:  BSF    x75.1
 ....................                     write_eeprom(2,1);                     
@@ -1617,7 +1588,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 0ABE:  MOVWF  4C
 ....................                 break; 
 0AC0:  BRA    0CF4
-....................                 case 24 : 
+....................                 case 24 : // Active le variateur à 50% 
 ....................                     Flag_Triac = 1; 
 0AC2:  BSF    x75.1
 ....................                     write_eeprom(2,1);                     
@@ -1651,7 +1622,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 ....................                 break; 
 0AF6:  BRA    0CF4
 ....................  
-....................                 case 25 : 
+....................                 case 25 : // Active le variateur à 60% 
 ....................                     Flag_Triac = 1; 
 0AF8:  BSF    x75.1
 ....................                     write_eeprom(2,1);                     
@@ -1685,7 +1656,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 ....................                 break; 
 0B2C:  BRA    0CF4
 ....................  
-....................                 case 26 : 
+....................                 case 26 : // Active le variateur à 75% 
 ....................                     Flag_Triac = 1; 
 0B2E:  BSF    x75.1
 ....................                     write_eeprom(2,1);                     
@@ -1719,7 +1690,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 ....................                 break; 
 0B62:  BRA    0CF4
 ....................  
-....................                 case 27 : 
+....................                 case 27 : // Active le variateur à 90% 
 ....................                     Flag_Triac = 1; 
 0B64:  BSF    x75.1
 ....................                     write_eeprom(2,1);                     
@@ -1752,19 +1723,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 0B96:  MOVWF  4C
 ....................                 break; 
 0B98:  BRA    0CF4
-....................          /*       case 28 : 
-....................                     Flag_Triac = 1; 
-....................                     write_eeprom(2,1);                     
-....................                     Flag_TriacVar = 1; 
-.................... 					Charge_Valeur = 6;                                   
-....................                 break; 
-....................                 case 29 : 
-....................                     Flag_Triac = 1; 
-....................                     write_eeprom(2,1);                     
-....................                     Flag_TriacVar = 1; 
-.................... 					Charge_Valeur = 7;                                   
-....................                 break;*/ 
-....................  
+.................... // Les différentes commandes et adresses des interrupteurs Flamingo 
 .................... 				case 30 : 
 .................... 					SetupEnvoiWireless(On, 4, AdresseA,4); 
 0B9A:  MOVLB  1
@@ -2143,7 +2102,7 @@ CCS PCH C Compiler, Version 5.051, 54872               03-mai-17 12:23
 0F38:  GOTO   1098 (RETURN)
 .................... } 
 .................... /* 
-.................... void ReceptionRF() 
+.................... void ReceptionRF()		// Reception 433 MHz  
 .................... {	 
 .................... 	disable_interrupts(INT_EXT2);	 
 .................... 	int8 OkOn = 0, OkOff = 0, OkOnAll = 0, OkOffAll = 0; 
